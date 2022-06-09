@@ -9,7 +9,7 @@ export default function Section({ children, className, fullscreen, ...rest }: Se
   return (
     <section
       className={classNames(
-        'relative flex h-full w-full flex-col items-center justify-center',
+        'relative grid h-full w-full flex-col place-items-center',
         fullscreen && 'min-h-screen',
         className
       )}
