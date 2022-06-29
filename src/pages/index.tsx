@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
-import Button from '../components/Button'
-import Container from '../components/Container'
-import Input from '../components/Input'
-import Section from '../components/Section'
+import Button from '../components/UI/Button'
+import Container from '../components/ui/Container'
+import Input from '../components/ui/Input'
+import Section from '../components/ui/Section'
 
 const Home: NextPage = () => {
   return (
@@ -10,7 +10,6 @@ const Home: NextPage = () => {
       <Section fullscreen>
         <Container maxWidth="7xl">
           <Button>Button</Button>
-          <Input label="Input" placeholder="Input"></Input>
         </Container>
       </Section>
     </>
