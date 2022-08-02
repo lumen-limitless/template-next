@@ -4,7 +4,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
-const nextConfig = {
+module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   trailingSlash: true,
   il8n: {
@@ -12,8 +12,6 @@ const nextConfig = {
     defaultLocale: 'en',
   },
   images: {
-    formats: ['image/webp'],
+    formats: ['image/webp', 'image/avif'],
   },
-}
-
-module.exports = withBundleAnalyzer(nextConfig)
+})

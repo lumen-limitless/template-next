@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --font-sans: '', -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue',
-    'Helvetica', sans-serif;
+  --font-text: '', -apple-system, system-ui, BlinkMacSystemFont,
+    'Helvetica Neue', 'Helvetica', sans-serif;
+  --font-heading: '', -apple-system, system-ui, BlinkMacSystemFont,
+    'Helvetica Neue', 'Helvetica', sans-serif;
 }
 
 *,
@@ -16,26 +18,49 @@
 html {
   box-sizing: border-box;
   touch-action: manipulation;
-  font-feature-settings: 'case' 1, 'rlig' 1, 'calt' 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-text);
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
 body {
-  @apply overflow-x-hidden;
-  @apply overflow-y-auto;
-  @apply bg-primary;
-  @apply scroll-smooth;
-  @apply min-h-full;
-  @apply w-full;
+  @apply overflow-y-auto overflow-x-hidden scroll-smooth bg-primary;
 }
 
 body {
-  @apply relative;
-  @apply m-0;
+  @apply relative m-0;
 }
 
-a {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-heading);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #04031b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsl(243, 5%, 26%);
+  border-radius: 100vh;
+  border: 2px solid hsl(240, 100%, 10%);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(243, 5%, 33%);
 }
