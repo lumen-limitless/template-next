@@ -1,3 +1,0 @@
-export const APP_NAME = 'NEXT APP TEMPLATE'
-export const APP_DESCRIPTION = 'TEMPLATE FOR NEXT APPLICATION'
-export const APP_URL = ''

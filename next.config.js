@@ -7,10 +7,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   trailingSlash: true,
-  il8n: {
-    locales: ['en'],
-    defaultLocale: 'en',
-  },
   images: {
     formats: ['image/webp', 'image/avif'],
   },

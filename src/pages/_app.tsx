@@ -1,16 +1,15 @@
-import '../styles/index.css'
+import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { APP_DESCRIPTION, APP_NAME } from '../constants'
 import Layout from '../layouts'
 import { DefaultSeo } from 'next-seo'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <DefaultSeo
-        defaultTitle={APP_NAME}
-        titleTemplate={`%s | ${APP_NAME}`}
-        description={APP_DESCRIPTION}
+        defaultTitle={process.env.NEXT_PUBLIC_APP_NAME || ''}
+        titleTemplate={`%s | ${process.env.NEXT_PUBIC_APP_NAME || ''}`}
+        description={process.env.NEXT_PUBLIC_APP_DESCRIPTION || ''}
       />
       <Head>
         <meta
