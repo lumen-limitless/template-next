@@ -16,21 +16,12 @@
 }
 
 html {
-  box-sizing: border-box;
-  touch-action: manipulation;
   font-family: var(--font-text);
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
 body {
-  @apply overflow-y-auto overflow-x-hidden scroll-smooth bg-primary;
-}
-
-body {
-  @apply relative m-0;
+  @apply m-0 box-border touch-manipulation overflow-y-auto overflow-x-hidden scroll-smooth bg-primary antialiased;
 }
 
 h1,
