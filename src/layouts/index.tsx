@@ -1,5 +1,15 @@
-export default function Layout({ children }: { children?: any }) {
+export default function Layout({ children }: { children?: React.ReactNode }) {
   return (
-    <main className="flex h-full min-h-screen w-full flex-col">{children}</main>
+    <>
+      <a href="#main" className="sr-only" aria-label="skip">
+        skip to main content
+      </a>
+      <main
+        id="main"
+        className="relative flex h-full min-h-screen w-full flex-col"
+      >
+        {children}
+      </main>{' '}
+    </>
   )
 }

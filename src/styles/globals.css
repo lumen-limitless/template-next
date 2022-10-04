@@ -21,7 +21,7 @@ html {
 
 html,
 body {
-  @apply m-0 box-border touch-manipulation overflow-y-auto overflow-x-hidden scroll-smooth bg-primary antialiased;
+  @apply m-0 box-border h-full touch-manipulation overflow-y-auto overflow-x-hidden scroll-smooth bg-primary antialiased;
 }
 
 h1,
