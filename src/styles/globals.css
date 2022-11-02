@@ -3,10 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-text: '', -apple-system, system-ui, BlinkMacSystemFont,
-    'Helvetica Neue', 'Helvetica', sans-serif;
-  --font-heading: '', -apple-system, system-ui, BlinkMacSystemFont,
-    'Helvetica Neue', 'Helvetica', sans-serif;
+  --font-text: '', -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+  --font-heading: '', -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
 }
 
 *,
@@ -17,22 +15,20 @@
 
 html,
 body {
-  @apply m-0 box-border touch-manipulation overflow-y-auto overflow-x-hidden scroll-smooth bg-zinc-100 p-0 antialiased;
-}
-html {
-  font-family: var(--font-text);
-  @apply min-h-full;
+  @apply m-0 box-border min-h-screen touch-manipulation  scroll-smooth  p-0  antialiased;
 }
 
-body {
-  @apply h-full;
+html {
+  font-family: var(--font-text);
+  text-rendering: optimizeLegibility;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   font-family: var(--font-heading);
 }
 
@@ -44,18 +40,12 @@ h5 {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  border-radius: 100vh;
-  background: #04031b;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: hsl(243, 5%, 26%);
-  border-radius: 100vh;
-  border: 2px solid hsl(240, 100%, 10%);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(243, 5%, 33%);
 }
