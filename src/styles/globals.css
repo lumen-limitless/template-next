@@ -13,14 +13,14 @@
   box-sizing: inherit;
 }
 
-html,
-body {
-  @apply m-0 box-border min-h-screen touch-manipulation  scroll-smooth  p-0  antialiased;
-}
-
 html {
   font-family: var(--font-text);
   text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+  @apply m-0 box-border min-h-screen touch-manipulation  scroll-smooth  p-0  antialiased;
 }
 
 h1,
