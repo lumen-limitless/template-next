@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
+    "analyze": "ANALYZE=true next build",
     "build": "next build && next export",
     "postbuild": "next-sitemap",
     "start": "next start",
@@ -37,8 +38,6 @@
     "next-seo": "^5.5.0",
     "next-sitemap": "^3.1.22",
     "next-themes": "^0.2.1",
-    "next-transpile-modules": "^9.0.0",
-    "next-unused": "^0.0.6",
     "postcss": "^8.4.16",
     "prettier": "^2.6.2",
     "prettier-plugin-tailwindcss": "^0.1.13",

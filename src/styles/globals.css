@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-text: '', -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
-  --font-heading: '', -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+  --font-text: -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+  --font-heading: -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
 }
 
 *,
@@ -13,14 +13,15 @@
   box-sizing: inherit;
 }
 
-html {
-  font-family: var(--font-text);
-  text-rendering: optimizeLegibility;
-}
-
 html,
 body {
-  @apply m-0 box-border min-h-screen touch-manipulation  scroll-smooth  p-0  antialiased;
+  font-family: var(--font-text);
+  text-rendering: optimizeLegibility;
+  @apply m-0 box-border  touch-manipulation  scroll-smooth  p-0  antialiased;
+}
+
+#__next {
+  @apply flex min-h-screen flex-col;
 }
 
 h1,
