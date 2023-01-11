@@ -1,13 +1,14 @@
-/** @type {import('next').NextConfig} */
-
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
-module.exports = withBundleAnalyzer({
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
-  images: {
-    formats: ['image/webp', 'image/avif'],
-  },
-})
+}
+
+module.exports =
+  process.env.NODE_ENV === 'production'
+    ? nextConfig
+    : withBundleAnalyzer(nextConfig)
