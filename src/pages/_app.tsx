@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import Layout from '../layouts'
 import { DefaultSeo } from 'next-seo'
+import ErrorBoundary from '../components/ErrorBoundary'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -20,7 +21,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
 
       <Layout>
-        <Component {...pageProps} />
+        <ErrorBoundary>
+          <Component {...pageProps} />
+        </ErrorBoundary>
       </Layout>
     </>
   )
