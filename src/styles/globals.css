@@ -16,9 +16,7 @@
 html {
   font-family: var(--font-text);
   text-rendering: optimizeLegibility;
-}
-body {
-  @apply m-0 box-border  touch-manipulation overflow-x-hidden scroll-smooth  p-0  antialiased;
+  @apply m-0 box-border  touch-manipulation  scroll-smooth  p-0  antialiased;
 }
 
 #__next {
