@@ -1,8 +1,13 @@
-//example next js api route
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { NextApiHandler } from 'next'
-
-const hello: NextApiHandler = (req, res) => {
-  res.status(200).json({ text: 'Hello' })
+type Data = {
+  name: string
 }
-export default hello
+
+export default function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<Data>
+) {
+  res.status(200).json({ name: 'John Doe' })
+}

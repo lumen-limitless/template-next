@@ -1,9 +1,15 @@
-import '../styles/globals.css'
+import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import Layout from '../layouts'
+import { Roboto } from 'next/font/google'
+import Layout from '@/layouts'
 import { DefaultSeo } from 'next-seo'
-import ErrorBoundary from '../components/ErrorBoundary'
+import ErrorBoundary from '@/components/ErrorBoundary'
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+})
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -19,6 +25,14 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
         />
       </Head>
+
+      <style jsx global>
+        {`
+          html {
+            font-family: ${roboto.style.fontFamily};
+          }
+        `}
+      </style>
 
       <Layout>
         <ErrorBoundary>
