@@ -31,15 +31,15 @@ export default class ErrorBoundary extends React.Component<Props, State> {
     if (this.state.hasError) {
       if (this.props.fallback) return this.props.fallback
       return (
-        <section className="flex h-full w-full flex-grow flex-col items-center justify-center gap-3">
-          <h1 className="text-3xl">Something went wrong.</h1>
+        <div>
+          <h2>Oops, there is an error!</h2>
           <button
-            className="text-bold inline-flex items-center justify-center gap-1 rounded-full bg-blue-500 p-3 text-white"
-            onClick={() => window.location.reload()}
+            type="button"
+            onClick={() => this.setState({ hasError: false })}
           >
-            Reload page
+            Try again?
           </button>
-        </section>
+        </div>
       )
     }
 
