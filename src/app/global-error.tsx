@@ -1,4 +1,4 @@
-//error boundary component for react and next js in typescript
+'use client'
 
 import React from 'react'
 

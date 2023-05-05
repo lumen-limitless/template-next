@@ -1,7 +1,18 @@
-import type { NextPage } from 'next'
 import Image from 'next/image'
 
-const Home: NextPage = () => {
+async function getData() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+
+  if (!res.ok) {
+    throw new Error('Something went wrong')
+  }
+
+  return res.json()
+}
+export default async function HomePage() {
+  const data = await getData()
+  console.log(data)
+
   return (
     <div className="flex h-full w-full flex-grow flex-col items-center justify-center gap-12">
       <Image
@@ -15,5 +26,3 @@ const Home: NextPage = () => {
     </div>
   )
 }
-
-export default Home
