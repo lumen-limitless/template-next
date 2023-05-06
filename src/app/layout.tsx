@@ -1,4 +1,4 @@
-import '@/styles/globals.css'
+import './globals.css'
 import Image from 'next/image'
 import { Roboto } from 'next/font/google'
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from '@/constants'
@@ -64,7 +64,7 @@ export default function RootLayout({
         />
 
         <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link
           rel="apple-touch-icon"
           sizes="57x57"
