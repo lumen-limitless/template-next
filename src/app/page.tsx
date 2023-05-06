@@ -9,9 +9,9 @@ async function getData() {
 
   return res.json()
 }
+
 export default async function HomePage() {
   const data = await getData()
-  console.log(data)
 
   return (
     <div className="flex h-full w-full flex-grow flex-col items-center justify-center gap-12">
