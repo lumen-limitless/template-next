@@ -2,15 +2,127 @@ import './globals.css'
 import Image from 'next/image'
 import { Roboto } from 'next/font/google'
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from '@/constants'
+import { Metadata } from 'next'
 
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
 })
 
-export const metadata = {
-  title: APP_NAME,
+export const metadata: Metadata = {
+  title: {
+    absolute: APP_NAME,
+    default: APP_NAME,
+    template: `%s | ${APP_NAME}`,
+  },
+  applicationName: APP_NAME,
   description: APP_DESCRIPTION,
+  themeColor: '#FFFFFF',
+  generator: 'Next.js',
+  keywords: [],
+  icons: [
+    { rel: 'icon', url: '/favicon.ico', sizes: 'any', type: undefined },
+    {
+      rel: 'apple-touch-icon',
+      url: '/apple-icon-57x57.png',
+      sizes: '57x57',
+    },
+    { rel: 'apple-touch-icon', url: '/apple-icon-60x60.png', sizes: '60x60' },
+    { rel: 'apple-touch-icon', url: '/apple-icon-72x72.png', sizes: '72x72' },
+    { rel: 'apple-touch-icon', url: '/apple-icon-76x76.png', sizes: '76x76' },
+    {
+      rel: 'apple-touch-icon',
+      url: '/apple-icon-114x114.png',
+      sizes: '114x114',
+    },
+    {
+      rel: 'apple-touch-icon',
+      url: '/apple-icon-120x120.png',
+      sizes: '120x120',
+    },
+    {
+      rel: 'apple-touch-icon',
+      url: '/apple-icon-144x144.png',
+      sizes: '144x144',
+    },
+    {
+      rel: 'apple-touch-icon',
+      url: '/apple-icon-152x152.png',
+      sizes: '152x152',
+    },
+    {
+      rel: 'apple-touch-icon',
+      url: '/apple-icon-180x180.png',
+      sizes: '180x180',
+    },
+    {
+      rel: 'icon',
+      url: '/android-icon-192x192.png',
+      sizes: '192x192',
+      type: 'image/png',
+    },
+    {
+      rel: 'icon',
+      url: '/favicon-32x32.png',
+      sizes: '32x32',
+      type: 'image/png',
+    },
+    {
+      rel: 'icon',
+      url: '/favicon-96x96.png',
+      sizes: '96x96',
+      type: 'image/png',
+    },
+    {
+      rel: 'icon',
+      url: '/favicon-16x16.png',
+      sizes: '16x16',
+      type: 'image/png',
+    },
+  ],
+
+  viewport:
+    'minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover',
+
+  openGraph: {
+    type: 'website',
+    url: APP_URL,
+    title: APP_NAME,
+    description: APP_DESCRIPTION,
+    images: [
+      {
+        url: '',
+      },
+    ],
+  },
+
+  twitter: {
+    title: APP_NAME,
+    site: APP_URL,
+    images: '',
+    creator: '@lumenlimitless',
+    description: APP_DESCRIPTION,
+    card: 'summary_large_image',
+  },
+
+  appleWebApp: {
+    statusBarStyle: 'black-translucent',
+    title: APP_NAME,
+    capable: true,
+  },
+
+  formatDetection: {
+    telephone: false,
+  },
+  manifest: '/manifest.json',
+
+  other: {
+    'mobile-web-app-capable': 'yes',
+    'msapplication-TileColor': '#FFFFFF',
+    'msapplication-TileImage': '/ms-icon-144x144.png',
+    'msapplication-config': '/browserconfig.xml',
+    'msapplication-tap-highlight': 'no',
+  },
 }
 
 export default function RootLayout({
@@ -25,115 +137,7 @@ export default function RootLayout({
     >
       <head>
         <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
-        />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta key="description" name="description" content={APP_DESCRIPTION} />
-        <meta name="application-name" content={APP_NAME} />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content="black-translucent"
-        />
-        <meta name="apple-mobile-web-app-title" content={APP_NAME} />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="msapplication-config" content="/browserconfig.xml" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="theme-color" content="#FFFFFF" />
-        <meta key="twitter:card" name="twitter:card" content="app" />
-        <meta key="twitter:title" name="twitter:title" content={APP_NAME} />
-        <meta key="twitter:url" name="twitter:url" content={APP_URL} />
-        <meta
-          key="twitter:description"
-          name="twitter:description"
-          content={APP_DESCRIPTION}
-        />
-        <meta key="twitter:image" name="twitter:image" content="" />
-        <meta key="twitter:creator" name="twitter:creator" content="" />
-        <meta key="og:type" property="og:type" content="website" />
-        <meta key="og:site_name" property="og:site_name" content={APP_NAME} />
-        <meta key="og:url" property="og:url" content={APP_URL} />
-        <meta key="og:image" property="og:image" content="" />
-        <meta
-          key="og:description"
-          property="og:description"
-          content={APP_DESCRIPTION}
-        />
-
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link
-          rel="apple-touch-icon"
-          sizes="57x57"
-          href="/apple-icon-57x57.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="60x60"
-          href="/apple-icon-60x60.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="72x72"
-          href="/apple-icon-72x72.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="76x76"
-          href="/apple-icon-76x76.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="114x114"
-          href="/apple-icon-114x114.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="120x120"
-          href="/apple-icon-120x120.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="144x144"
-          href="/apple-icon-144x144.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="152x152"
-          href="/apple-icon-152x152.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-icon-180x180.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="192x192"
-          href="/android-icon-192x192.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="96x96"
-          href="/favicon-96x96.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
       </head>
 
       <body className={`flex min-h-screen flex-col ${roboto.className}`}>
