@@ -107,6 +107,8 @@ export const defaultMetadata: Metadata = {
   },
   manifest: '/manifest.json',
 
+  metadataBase: new URL(APP_URL),
+
   other: {
     'mobile-web-app-capable': 'yes',
     'msapplication-TileColor': '#FFFFFF',
