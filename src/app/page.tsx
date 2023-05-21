@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 
 async function getData() {
@@ -23,6 +24,10 @@ export default async function HomePage() {
         priority
         className="animate-pulse"
       />
+      <Button variant={'default'}>Click Me!</Button>
+      <Button variant={'secondary'}>No, Click Me!</Button>
+      <Button variant={'outline'}>No, Click Me!</Button>
+      <Button variant={'destructive'}>Don&apos;t Click Me.</Button>
     </div>
   )
 }
