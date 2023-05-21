@@ -9,6 +9,7 @@ export const defaultMetadata: Metadata = {
   applicationName: APP_NAME,
   description: APP_DESCRIPTION,
   themeColor: '#FFFFFF',
+  metadataBase: new URL(APP_URL),
   generator: 'Next.js',
   keywords: [],
   icons: [
@@ -106,8 +107,6 @@ export const defaultMetadata: Metadata = {
     telephone: false,
   },
   manifest: '/manifest.json',
-
-  metadataBase: new URL(APP_URL),
 
   other: {
     'mobile-web-app-capable': 'yes',
