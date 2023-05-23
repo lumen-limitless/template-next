@@ -17,7 +17,6 @@ export const defaultMetadata: Metadata = {
   generator: 'Next.js',
   keywords: [],
   icons: [
-    { rel: 'icon', url: '/favicon.ico', sizes: 'any', type: undefined },
     {
       rel: 'apple-touch-icon',
       url: '/apple-icon-57x57.png',
