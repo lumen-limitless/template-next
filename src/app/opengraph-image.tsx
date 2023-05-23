@@ -29,7 +29,7 @@ export default function Image() {
           justifyContent: 'center',
         }}
       >
-        <object data="/vercel.svg" className="h-96" type="image/svg+xml" />
+        <object data="/vercel.svg" height={'33%'} type="image/svg+xml" />
       </div>
     ),
     // ImageResponse options
