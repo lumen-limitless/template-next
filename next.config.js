@@ -10,16 +10,20 @@ const nextConfig = {
   transpilePackages: undefined,
   images: {
     formats: ['image/webp', 'image/avif'],
+    deviceSizes: undefined,
   },
 
-  webpack: (config, { isServer }) => {
+  webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
       use: [
         {
           loader: '@svgr/webpack',
-          options: { dimensions: false, typescript: true },
+          options: {
+            typescript: true,
+            dimensions: false,
+          },
         },
       ],
     })
