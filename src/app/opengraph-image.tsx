@@ -1,3 +1,5 @@
+// default opengraph image, if separate twitter image is required, add a twitter-image.tsx file
+
 import { ImageResponse } from 'next/server'
 
 // Route segment config
@@ -27,7 +29,7 @@ export default function Image() {
           justifyContent: 'center',
         }}
       >
-        About Acme
+        <object data="/vercel.svg" className="h-96" type="image/svg+xml" />
       </div>
     ),
     // ImageResponse options

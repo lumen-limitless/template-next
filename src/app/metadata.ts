@@ -1,10 +1,8 @@
 import { Metadata } from 'next'
 
-const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'Next Template'
-const APP_DESCRIPTION =
-  process.env.NEXT_PUBLIC_APP_DESCRIPTION || 'Next Template'
-const APP_URL =
-  process.env.NEXT_PUBLIC_APP_URL || 'https://next-template.vercel.app'
+const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || ''
+const APP_DESCRIPTION = process.env.NEXT_PUBLIC_APP_DESCRIPTION || ''
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || ''
 
 export const defaultMetadata: Metadata = {
   title: {
@@ -85,8 +83,10 @@ export const defaultMetadata: Metadata = {
   openGraph: {
     type: 'website',
     url: APP_URL,
+    siteName: APP_NAME,
     title: APP_NAME,
     description: APP_DESCRIPTION,
+    locale: 'en_US',
   },
 
   twitter: {
