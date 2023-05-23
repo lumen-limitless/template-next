@@ -9,8 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "analyze": "ANALYZE=true next build",
-    "postbuild": "next-sitemap"
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",

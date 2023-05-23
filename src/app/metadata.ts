@@ -1,5 +1,11 @@
 import { Metadata } from 'next'
-import { APP_NAME, APP_DESCRIPTION, APP_URL } from '@/constants'
+
+const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'Next Template'
+const APP_DESCRIPTION =
+  process.env.NEXT_PUBLIC_APP_DESCRIPTION || 'Next Template'
+const APP_URL =
+  process.env.NEXT_PUBLIC_APP_URL || 'https://next-template.vercel.app'
+
 export const defaultMetadata: Metadata = {
   title: {
     absolute: APP_NAME,
@@ -81,17 +87,11 @@ export const defaultMetadata: Metadata = {
     url: APP_URL,
     title: APP_NAME,
     description: APP_DESCRIPTION,
-    images: [
-      {
-        url: '',
-      },
-    ],
   },
 
   twitter: {
     title: APP_NAME,
     site: APP_URL,
-    images: '',
     creator: '@lumenlimitless',
     description: APP_DESCRIPTION,
     card: 'summary_large_image',
@@ -101,6 +101,20 @@ export const defaultMetadata: Metadata = {
     statusBarStyle: 'black-translucent',
     title: APP_NAME,
     capable: true,
+  },
+
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 
   formatDetection: {
