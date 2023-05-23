@@ -118,6 +118,8 @@ export const defaultMetadata: Metadata = {
   },
 
   formatDetection: {
+    email: false,
+    address: false,
     telephone: false,
   },
   manifest: '/manifest.json',
