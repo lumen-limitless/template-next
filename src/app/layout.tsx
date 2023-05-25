@@ -23,7 +23,7 @@ export default function RootLayout({
 
       <body className={`${roboto.className}`}>
         <a href="#main" className="sr-only" aria-label="skip">
-          skip to main content
+          skip to content
         </a>
 
         <header id="header">
