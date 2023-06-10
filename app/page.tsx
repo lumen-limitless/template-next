@@ -1,4 +1,4 @@
-import { Button } from 'src/components/ui/button'
+import { Button } from '@/components/ui/button'
 
 async function getData() {
   const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
