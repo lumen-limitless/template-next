@@ -1,6 +1,9 @@
 import './globals.css'
 import { Roboto } from 'next/font/google'
 import { defaultMetadata } from './metadata'
+import Header from '../components/Header'
+import Main from '../components/Main'
+import Footer from '../components/Footer'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -26,19 +29,11 @@ export default function RootLayout({
           skip to content
         </a>
 
-        <header id="header">
-          <div className="flex w-full justify-between">
-            <object data="/vercel.svg" width={100} height={24} />
-          </div>
-        </header>
+        <Header />
 
-        <main id="main">{children}</main>
-        <footer id="footer">
-          <p className="text-sm">
-            &copy; {new Date().getFullYear()} Lumen Limitless. All rights
-            reserved.
-          </p>
-        </footer>
+        <Main>{children}</Main>
+
+        <Footer />
       </body>
     </html>
   )
