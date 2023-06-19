@@ -1,6 +1,3 @@
 {
-  "cSpell.words": ["headlessui", "postbuild", "tailwindcss"],
-  "files.exclude": {
-    "**/node_modules/@radix-ui/**": true
-  }
+  "cSpell.words": ["headlessui", "postbuild", "tailwindcss"]
 }
