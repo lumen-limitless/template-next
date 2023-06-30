@@ -9,8 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "analyze": "ANALYZE=true next build",
-    "sitemap": "next-sitemap"
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@svgr/webpack": "^8.0.1",
