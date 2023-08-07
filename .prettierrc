@@ -5,6 +5,7 @@
   "singleQuote": true,
   "plugins": [
     "prettier-plugin-organize-imports",
+    "prettier-plugin-packagejson",
     "prettier-plugin-tailwindcss"
   ],
   "pluginSearchDirs": false
