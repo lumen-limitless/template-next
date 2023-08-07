@@ -1,10 +1,10 @@
-import './globals.css'
+import { cn } from '@/lib/utils'
 import { Roboto } from 'next/font/google'
-import { defaultMetadata } from './metadata'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Main from '../components/Main'
-import Footer from '../components/Footer'
-import { cn } from '@/lib/utils'
+import './globals.css'
+import { defaultMetadata } from './metadata'
 
 const roboto = Roboto({
   subsets: ['latin'],
