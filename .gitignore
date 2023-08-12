@@ -39,3 +39,6 @@ firebase.json
 
 # typescript
 *.tsbuildinfo
+/test-results/
+/playwright-report/
+/playwright/.cache/
