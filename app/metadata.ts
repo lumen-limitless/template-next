@@ -1,8 +1,14 @@
 import { Metadata } from 'next'
 
 const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'Next App'
+
 const APP_DESCRIPTION = process.env.NEXT_PUBLIC_APP_DESCRIPTION || ''
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
+
+const APP_URL = process.env.NEXT_PUBLI_APP_URL
+  ? `${process.env.NEXT_PUBLIC_APP_URL}`
+  : process.env.NEXT_PUBLIC_VERCEL_URL
+  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  : 'http://localhost:3000'
 
 export const defaultMetadata: Metadata = {
   title: {
@@ -16,6 +22,7 @@ export const defaultMetadata: Metadata = {
   metadataBase: new URL(APP_URL),
   generator: 'Next.js',
   keywords: [],
+  manifest: null,
 
   openGraph: {
     type: 'website',
@@ -37,7 +44,7 @@ export const defaultMetadata: Metadata = {
   appleWebApp: {
     statusBarStyle: 'black-translucent',
     title: APP_NAME,
-    capable: true,
+    capable: false,
   },
 
   robots: {
@@ -50,5 +57,4 @@ export const defaultMetadata: Metadata = {
     address: false,
     telephone: false,
   },
-  manifest: null,
 }
