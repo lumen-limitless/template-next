@@ -1,9 +1,9 @@
 name: Playwright Tests
 on:
   push:
-    branches: [master, main, canary]
+    branches: [master, canary]
   pull_request:
-    branches: [master, main, canary]
+    branches: [master, canary]
 jobs:
   test:
     timeout-minutes: 60
@@ -38,9 +38,14 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
+
       - name: Run Playwright tests
+        env:
+          CI: 'true'
+
         run: pnpm exec playwright test
       - uses: actions/upload-artifact@v3
         if: always()
