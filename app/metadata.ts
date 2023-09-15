@@ -4,7 +4,7 @@ const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'Next App'
 
 const APP_DESCRIPTION = process.env.NEXT_PUBLIC_APP_DESCRIPTION || ''
 
-const APP_URL = process.env.NEXT_PUBLI_APP_URL
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL
   ? `${process.env.NEXT_PUBLIC_APP_URL}`
   : process.env.NEXT_PUBLIC_VERCEL_URL
   ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
