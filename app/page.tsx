@@ -3,10 +3,6 @@ interface PageProps {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export const metadata = {
-  title: '',
-}
-
 export default function Page({}: PageProps) {
   return (
     <div className="flex h-full w-full flex-grow flex-col items-center justify-center gap-12">
