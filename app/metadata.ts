@@ -26,7 +26,6 @@ export const defaultMetadata: Metadata = {
 
   twitter: {
     title: APP_NAME,
-    site: APP_URL,
     creator: '@LumenLimitless',
     description: APP_DESCRIPTION,
     card: 'summary_large_image',
