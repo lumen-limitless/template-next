@@ -9,7 +9,7 @@ export const metadata = {
 export default async function Page({}: PageProps) {
   return (
     <>
-      <p>404 - page not found</p>
+      <h1>404 - page not found</h1>
     </>
   )
 }
