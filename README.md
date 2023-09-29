@@ -24,7 +24,7 @@ This is a Next.js template repository that includes various scripts and dependen
 
 ### Prerequisites
 
-Before you begin, ensure you have Node.js and npm (Node Package Manager) installed.
+Before you begin, ensure you have Node.js and pnpm installed.
 
 ### Installation
 
@@ -38,7 +38,7 @@ Before you begin, ensure you have Node.js and npm (Node Package Manager) install
 2. Install project dependencies:
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 ### Available Scripts
@@ -48,7 +48,7 @@ In the project directory, you can run the following scripts:
 - **Development Server**:
 
   ```bash
-  npm run dev
+  pnpm dev
   ```
 
   Starts the development server.
@@ -56,7 +56,7 @@ In the project directory, you can run the following scripts:
 - **Build**:
 
   ```bash
-  npm run build
+  pnpm build
   ```
 
   Builds the production-ready application.
@@ -64,7 +64,7 @@ In the project directory, you can run the following scripts:
 - **Linting**:
 
   ```bash
-  npm run lint
+  pnpm lint
   ```
 
   Runs linting checks.
@@ -72,7 +72,7 @@ In the project directory, you can run the following scripts:
 - **Unit Tests**:
 
   ```bash
-  npm run test:unit
+  pnpm test:unit
   ```
 
   Runs unit tests.
@@ -80,7 +80,7 @@ In the project directory, you can run the following scripts:
 - **End-to-End Tests**:
 
   ```bash
-  npm run test:e2e
+  pnpm test:e2e
   ```
 
   Runs end-to-end tests using Playwright.
@@ -88,7 +88,7 @@ In the project directory, you can run the following scripts:
 - **Bundle Analyzer**:
 
   ```bash
-  npm run analyze
+  pnpm analyze
   ```
 
   Analyzes your bundle size.
