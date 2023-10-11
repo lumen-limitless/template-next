@@ -31,7 +31,7 @@ export default function RootLayout({
         }}
         className={cn(
           roboto.className,
-          'flex min-h-screen touch-manipulation flex-col antialiased'
+          'flex min-h-screen touch-manipulation flex-col antialiased',
         )}
       >
         <a href="#main" className="sr-only" aria-label="skip">
