@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils'
+import { Viewport } from 'next'
 import { Roboto } from 'next/font/google'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
@@ -12,6 +13,10 @@ const roboto = Roboto({
 })
 
 export const metadata = defaultMetadata
+
+export const viewport: Viewport = {
+  themeColor: '#FFFFFF',
+}
 
 export default function RootLayout({
   children,

@@ -9,7 +9,6 @@ export const defaultMetadata: Metadata = {
   },
   applicationName: APP_NAME,
   description: APP_DESCRIPTION,
-  themeColor: '#FFFFFF',
   metadataBase: new URL(APP_URL),
   generator: 'Next.js',
   keywords: [],

@@ -1,6 +1,6 @@
 // default opengraph image, if separate twitter image is required, add a twitter-image.tsx file
 
-import { ImageResponse } from 'next/server'
+import { ImageResponse } from 'next/og'
 
 // Route segment config
 export const runtime = 'edge'
