@@ -1,9 +1,9 @@
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
+import Main from '@/components/Main'
 import { cn } from '@/lib/utils'
 import { Viewport } from 'next'
 import { Roboto } from 'next/font/google'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
-import Main from '../components/Main'
 import './globals.css'
 import { defaultMetadata } from './metadata'
 
