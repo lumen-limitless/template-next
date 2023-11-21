@@ -1,5 +1,13 @@
-import { APP_DESCRIPTION, APP_NAME, APP_URL } from '@/lib/constants'
+import { APP_DESCRIPTION } from '@/lib/constants'
 import { type Metadata } from 'next'
+
+const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'Next.js Starter'
+
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL
+  ? `https://${process.env.NEXT_PUBLIC_APP_URL}`
+  : process.env.NEXT_PUBLIC_VERCEL_URL
+    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+    : 'http://localhost:3000'
 
 export const defaultMetadata: Metadata = {
   title: {
@@ -9,14 +17,13 @@ export const defaultMetadata: Metadata = {
   },
   applicationName: APP_NAME,
   description: APP_DESCRIPTION,
-  metadataBase: new URL(APP_URL),
+  metadataBase: new URL(baseUrl),
   generator: 'Next.js',
   keywords: [],
-  manifest: null,
 
   openGraph: {
     type: 'website',
-    url: APP_URL,
+    url: baseUrl,
     siteName: APP_NAME,
     title: APP_NAME,
     description: APP_DESCRIPTION,
@@ -31,7 +38,7 @@ export const defaultMetadata: Metadata = {
   },
 
   appleWebApp: {
-    statusBarStyle: 'black-translucent',
+    statusBarStyle: 'default',
     title: APP_NAME,
     capable: false,
   },
@@ -39,6 +46,10 @@ export const defaultMetadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 
   formatDetection: {
@@ -46,4 +57,6 @@ export const defaultMetadata: Metadata = {
     address: false,
     telephone: false,
   },
+
+  manifest: '/manifest.json',
 }
