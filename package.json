@@ -47,6 +47,7 @@
     "prettier-plugin-organize-imports": "^3.2.4",
     "prettier-plugin-packagejson": "^2.4.6",
     "prettier-plugin-tailwindcss": "^0.5.7",
+    "sharp": "^0.32.6",
     "ts-node": "^10.9.1",
     "typescript": "5.3.2"
   },
