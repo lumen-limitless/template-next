@@ -10,7 +10,7 @@ export default function GlobalError({
   return (
     <html>
       <body className="flex items-center justify-center text-center">
-        <div className="flex h-full w-full flex-grow flex-col items-center justify-center space-y-5 text-center">
+        <section className="flex h-full w-full flex-grow flex-col items-center justify-center space-y-5 text-center">
           <h1 className="text-6xl">😔</h1>
           <h2 className="text-xl">Something went wrong!</h2>
           <button
@@ -22,7 +22,7 @@ export default function GlobalError({
           >
             Try again
           </button>
-        </div>
+        </section>
       </body>
     </html>
   )
