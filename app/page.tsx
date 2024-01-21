@@ -1,6 +1,6 @@
 interface PageProps {
-  params: {}
-  searchParams: { [key: string]: string | string[] | undefined }
+  params: {};
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export default function Page({}: PageProps) {
@@ -13,5 +13,5 @@ export default function Page({}: PageProps) {
         className="animate-pulse"
       />
     </div>
-  )
+  );
 }

@@ -1,13 +1,13 @@
-import { APP_DESCRIPTION } from '@/lib/constants'
-import { type Metadata } from 'next'
+import { APP_DESCRIPTION } from '@/lib/constants';
+import { type Metadata } from 'next';
 
-const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'Next.js Starter'
+const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'Next.js Starter';
 
 const baseUrl = process.env.NEXT_PUBLIC_APP_URL
   ? `https://${process.env.NEXT_PUBLIC_APP_URL}`
   : process.env.NEXT_PUBLIC_VERCEL_URL
     ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-    : 'http://localhost:3000'
+    : 'http://localhost:3000';
 
 export const defaultMetadata: Metadata = {
   title: {
@@ -59,4 +59,4 @@ export const defaultMetadata: Metadata = {
   },
 
   manifest: '/manifest.json',
-}
+};

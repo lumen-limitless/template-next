@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
 export default function GlobalError({
   error,
   reset,
 }: {
-  error: Error
-  reset: () => void
+  error: Error;
+  reset: () => void;
 }) {
   return (
     <html>
@@ -25,5 +25,5 @@ export default function GlobalError({
         </section>
       </body>
     </html>
-  )
+  );
 }

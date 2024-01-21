@@ -3,5 +3,5 @@ export default function Main({ children }: { children: React.ReactNode }) {
     <main id="main" className="flex flex-grow flex-col">
       {children}
     </main>
-  )
+  );
 }

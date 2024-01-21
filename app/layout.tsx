@@ -1,27 +1,27 @@
-import Footer from '@/app/footer'
-import Header from '@/app/header'
-import Main from '@/app/main'
-import { cn } from '@/lib/utils'
-import { Viewport } from 'next'
-import { Roboto } from 'next/font/google'
-import './globals.css'
-import { defaultMetadata } from './metadata'
+import Footer from '@/app/footer';
+import Header from '@/app/header';
+import Main from '@/app/main';
+import { cn } from '@/lib/utils';
+import { Viewport } from 'next';
+import { Roboto } from 'next/font/google';
+import './globals.css';
+import { defaultMetadata } from './metadata';
 
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
-})
+});
 
-export const metadata = defaultMetadata
+export const metadata = defaultMetadata;
 
 export const viewport: Viewport = {
   themeColor: '#FFFFFF',
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" className="scroll-smooth">
@@ -50,5 +50,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-  )
+  );
 }
