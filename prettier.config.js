@@ -10,4 +10,4 @@ module.exports = {
   ],
   tailwindFunctions: ['clsx', 'cn', 'cva'],
   pluginSearchDirs: false,
-}
+};
