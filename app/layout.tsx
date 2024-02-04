@@ -39,8 +39,13 @@ export default function RootLayout({
           'flex min-h-screen touch-manipulation flex-col antialiased',
         )}
       >
-        <a href="#main" className="sr-only" aria-label="skip">
-          skip to content
+        <a
+          href="#main"
+          className="sr-only absolute left-[-999px] top-[-999px] block border bg-[#ffc] text-black focus:not-sr-only focus:bottom-0 focus:top-0 focus:border-[#990000]"
+          aria-label="skip"
+          id="skip"
+        >
+          Skip Content
         </a>
 
         <Header />
