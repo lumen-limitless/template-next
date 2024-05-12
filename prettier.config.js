@@ -9,5 +9,4 @@ module.exports = {
     'prettier-plugin-tailwindcss',
   ],
   tailwindFunctions: ['clsx', 'cn', 'cva'],
-  pluginSearchDirs: false,
 };

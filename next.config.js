@@ -22,15 +22,15 @@ module.exports = {
           },
         },
       ],
-    })
+    });
 
-    return config
+    return config;
   },
-}
+};
 
 // bundle-analyzer
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
-})
+});
 
-module.exports = withBundleAnalyzer(module.exports)
+module.exports = withBundleAnalyzer(module.exports);
