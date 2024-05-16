@@ -70,7 +70,8 @@ const TailwindIndicator = () => {
       <span className="hidden md:block lg:hidden">MD</span>
       <span className="hidden lg:block xl:hidden">LG</span>
       <span className="hidden xl:block 2xl:hidden">XL</span>
-      <span className="hidden 2xl:block">2XL</span>
+      <span className="3xl:hidden hidden 2xl:block">2XL</span>
+      <span className="3xl:block hidden">3XL</span>
     </div>
   );
 };
