@@ -4,6 +4,22 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
+
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    target-branch: 'main'
+    labels:
+      - 'dependencies'
+    open-pull-requests-limit: 10
+    versioning-strategy: auto
+
+  - package-ecosystem: 'docker'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+
   - package-ecosystem: 'pnpm'
     directory: '/'
     schedule:
@@ -12,3 +28,4 @@ updates:
     labels:
       - 'dependencies'
     open-pull-requests-limit: 10
+    versioning-strategy: auto
