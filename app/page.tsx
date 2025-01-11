@@ -15,7 +15,7 @@ export const metadata = {
 export default function Page({ params, searchParams }: PageProps) {
   return (
     <>
-      <div className="flex h-full w-full flex-grow flex-col items-center justify-center gap-12">
+      <div className="flex h-full w-full grow flex-col items-center justify-center gap-12">
         <object
           data="/next.svg"
           width={200}
