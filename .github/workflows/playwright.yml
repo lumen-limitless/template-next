@@ -18,7 +18,7 @@ jobs:
         name: Install pnpm
         id: pnpm-install
         with:
-          version: 'latest'
+          version: "latest"
           run_install: false
 
       - name: Get pnpm store directory
@@ -43,7 +43,7 @@ jobs:
 
       - name: Run Playwright tests
         env:
-          CI: 'true'
+          CI: "true"
 
         run: pnpm exec playwright test
       - uses: actions/upload-artifact@v4

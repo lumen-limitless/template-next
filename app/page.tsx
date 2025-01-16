@@ -1,17 +1,17 @@
 type PageProps = {
-  params: Promise<{}>;
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-};
+  params: Promise<{}>
+  searchParams: Promise<Record<string, string | string[] | undefined>>
+}
 
-export const runtime = 'nodejs';
+export const runtime = "nodejs"
 
-export const revalidate = 0;
+export const revalidate = 0
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic"
 
 export const metadata = {
-  title: '',
-};
+  title: "",
+}
 export default function Page({ params, searchParams }: PageProps) {
   return (
     <>
@@ -24,5 +24,5 @@ export default function Page({ params, searchParams }: PageProps) {
         />
       </div>
     </>
-  );
+  )
 }

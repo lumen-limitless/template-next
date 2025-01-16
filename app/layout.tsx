@@ -1,27 +1,27 @@
-import Footer from '@/app/footer';
-import Header from '@/app/header';
-import Main from '@/app/main';
-import { cn } from '@/lib/utils';
-import { Viewport } from 'next';
-import { Roboto } from 'next/font/google';
-import './globals.css';
-import { defaultMetadata } from './metadata';
+import Footer from "@/app/footer"
+import Header from "@/app/header"
+import Main from "@/app/main"
+import { cn } from "@/lib/utils"
+import { Viewport } from "next"
+import { Roboto } from "next/font/google"
+import "./globals.css"
+import { defaultMetadata } from "./metadata"
 
 const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-});
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+})
 
-export const metadata = defaultMetadata;
+export const metadata = defaultMetadata
 
 export const viewport: Viewport = {
-  themeColor: '#FFFFFF',
-};
+  themeColor: "#FFFFFF",
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en" className="scroll-smooth">
@@ -32,11 +32,11 @@ export default function RootLayout({
 
       <body
         style={{
-          textRendering: 'optimizeLegibility',
+          textRendering: "optimizeLegibility",
         }}
         className={cn(
           roboto.className,
-          'flex min-h-screen touch-manipulation flex-col antialiased',
+          "flex min-h-screen touch-manipulation flex-col antialiased"
         )}
       >
         <a
@@ -57,11 +57,11 @@ export default function RootLayout({
         <TailwindIndicator />
       </body>
     </html>
-  );
+  )
 }
 
 const TailwindIndicator = () => {
-  if (process.env.NODE_ENV === 'production') return null;
+  if (process.env.NODE_ENV === "production") return null
 
   return (
     <div className="fixed bottom-0 left-0 z-50 bg-black p-2 font-mono text-sm text-white">
@@ -73,5 +73,5 @@ const TailwindIndicator = () => {
       <span className="3xl:hidden hidden 2xl:block">2XL</span>
       <span className="3xl:block hidden">3XL</span>
     </div>
-  );
-};
+  )
+}

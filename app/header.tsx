@@ -1,4 +1,4 @@
-'use client';
+"use client"
 
 export default function Header() {
   return (
@@ -10,5 +10,5 @@ export default function Header() {
         <object data="/vercel.svg" width={100} height={24} />
       </div>
     </header>
-  );
+  )
 }

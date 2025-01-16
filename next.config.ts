@@ -1,5 +1,5 @@
-import withBundleAnalyzer from '@next/bundle-analyzer';
-import { NextConfig } from 'next';
+import withBundleAnalyzer from "@next/bundle-analyzer"
+import { NextConfig } from "next"
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   output: undefined,
   transpilePackages: undefined,
   images: {
-    formats: ['image/webp', 'image/avif'],
+    formats: ["image/webp", "image/avif"],
     deviceSizes: undefined,
   },
 
@@ -18,20 +18,20 @@ const nextConfig: NextConfig = {
       issuer: /\.[jt]sx?$/,
       use: [
         {
-          loader: '@svgr/webpack',
+          loader: "@svgr/webpack",
           options: {
             typescript: true,
             dimensions: false,
           },
         },
       ],
-    });
+    })
 
-    return config;
+    return config
   },
-};
+}
 
 // bundle-analyzer
-export default withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })(
-  nextConfig,
-);
+export default withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" })(
+  nextConfig
+)

@@ -1,4 +1,4 @@
-'use client';
+"use client"
 
 export default function Footer() {
   return (
@@ -7,5 +7,5 @@ export default function Footer() {
         &copy; {new Date().getFullYear()} Lumen Limitless. All rights reserved.
       </p>
     </footer>
-  );
+  )
 }
