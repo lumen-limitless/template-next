@@ -31,12 +31,9 @@ export default function RootLayout({
       </head>
 
       <body
-        style={{
-          textRendering: "optimizeLegibility",
-        }}
         className={cn(
-          roboto.className,
-          "flex min-h-screen touch-manipulation flex-col antialiased"
+          "flex min-h-screen touch-manipulation flex-col antialiased",
+          roboto.className
         )}
       >
         <a
