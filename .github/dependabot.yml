@@ -19,13 +19,3 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    target-branch: "main"
-    labels:
-      - "dependencies"
-    open-pull-requests-limit: 10
-    versioning-strategy: auto
