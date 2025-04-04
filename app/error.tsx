@@ -15,7 +15,7 @@ export default function Error({
   }, [error])
 
   return (
-    <section className="flex h-full w-full flex-grow flex-col items-center justify-center space-y-5 text-center">
+    <section className="flex h-full w-full grow flex-col items-center justify-center space-y-5 text-center">
       <h1 className="text-6xl">😔</h1>
       <h2 className="text-xl">Something went wrong!</h2>
       <button
