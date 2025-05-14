@@ -23,4 +23,6 @@ alwaysApply: false
   - Use server components for data fetching
   - Use React Server Actions for form handling
   - Use URL search params for shareable state
-- Use `nuqs` for URL search param state management
+- Use `nuqs` for URL search param state management-
+- always export a default function from page.tsx files named "Page" using the PageProps type in @index.ts
+- in nextjs 15+, params and searchParams are Promises that must be awaited

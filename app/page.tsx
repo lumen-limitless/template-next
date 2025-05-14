@@ -1,7 +1,4 @@
-type PageProps = {
-  params: Promise<{}>
-  searchParams: Promise<Record<string, string | string[] | undefined>>
-}
+import type { PageProps } from "@/types"
 
 export const metadata = {
   title: "",
