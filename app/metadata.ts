@@ -1,5 +1,5 @@
 import { APP_DESCRIPTION } from "@/lib/constants"
-import { type Metadata } from "next"
+import type { Metadata } from "next"
 
 const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || "Next.js Starter"
 
