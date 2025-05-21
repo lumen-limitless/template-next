@@ -1,7 +1,9 @@
-import { APP_DESCRIPTION } from "@/lib/constants"
 import type { Metadata } from "next"
 
-const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || "Next.js Starter"
+export const APP_DESCRIPTION =
+  "A Next.js starter with TypeScript, TailwindCSS, ESLint, Prettier, Jest, and more."
+
+export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || "Next.js Starter"
 
 export const baseUrl = new URL(
   process.env.NEXT_PUBLIC_APP_URL
@@ -63,6 +65,4 @@ export const defaultMetadata: Metadata = {
     address: false,
     telephone: false,
   },
-
-  manifest: "/manifest.json",
 }

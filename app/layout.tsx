@@ -4,8 +4,8 @@ import Main from "@/app/main"
 import { cn } from "@/lib/utils"
 import { Viewport } from "next"
 import { Roboto } from "next/font/google"
+import { defaultMetadata } from "../lib/metadata"
 import "./globals.css"
-import { defaultMetadata } from "./metadata"
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -38,7 +38,7 @@ export default function RootLayout({
       >
         <a
           href="#main"
-          className="sr-only absolute left-[-999px] top-[-999px] block border bg-[#ffc] text-black focus:not-sr-only focus:bottom-0 focus:top-0 focus:border-[#990000]"
+          className="sr-only absolute top-[-999px] left-[-999px] block border bg-[#ffc] text-black focus:not-sr-only focus:top-0 focus:bottom-0 focus:border-[#990000]"
           aria-label="skip"
           id="skip"
         >
