@@ -32,7 +32,7 @@ export default function RootLayout({
 
       <body
         className={cn(
-          "flex min-h-screen touch-manipulation flex-col antialiased",
+          "flex min-h-screen touch-manipulation flex-col",
           roboto.className
         )}
       >
