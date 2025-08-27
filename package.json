@@ -11,11 +11,15 @@
     "format": "prettier --write .",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
+    "prepare": "husky",
     "start": "next start",
     "test": "jest && exec playwright test",
     "test:e2e": "exec playwright test",
     "test:unit": "jest",
     "typecheck": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "*.ts": "prettier --write"
   },
   "prettier": {
     "endOfLine": "lf",
