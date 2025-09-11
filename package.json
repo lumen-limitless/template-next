@@ -19,8 +19,8 @@
     "typecheck": "tsc --noEmit"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": "prettier --write",
-    "*.{css,md}": "prettier --write"
+    "*.{ts,tsx,js,jsx}": "prettier --write .",
+    "*.{css,md}": "prettier --write ."
   },
   "prettier": {
     "endOfLine": "lf",
