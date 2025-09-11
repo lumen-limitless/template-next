@@ -1,9 +1,9 @@
-import type { PageProps } from "@/types"
+import { PageProps } from "@/.next/types/app/page"
 
 export const metadata = {
   title: "",
 }
-export default function Page({ params, searchParams }: PageProps) {
+export default function Page(props: PageProps) {
   return (
     <object
       data="/next.svg"
