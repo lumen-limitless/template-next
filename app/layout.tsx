@@ -18,11 +18,7 @@ export const viewport: Viewport = {
   themeColor: "#FFFFFF",
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout(props: LayoutProps<"/">) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
@@ -47,7 +43,7 @@ export default function RootLayout({
 
         <Header />
 
-        <Main>{children}</Main>
+        <Main>{props.children}</Main>
 
         <Footer />
 

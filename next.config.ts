@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
   output: undefined,
   transpilePackages: undefined,
+  typedRoutes: true,
   eslint: {
     ignoreDuringBuilds: true,
   },

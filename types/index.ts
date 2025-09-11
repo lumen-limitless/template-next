@@ -1,16 +1,4 @@
 /**
- * Generic type for Next.js page props
- * Includes params and searchParams properties that are commonly used in page components
- */
-export type PageProps<
-  TParams = {},
-  TSearchParams = Record<string, string | string[] | undefined>,
-> = {
-  params: Promise<TParams>
-  searchParams: Promise<TSearchParams>
-}
-
-/**
  * Represents the result of a server action.
  *
  * @template T - The type of the data returned on success.
