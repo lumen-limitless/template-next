@@ -16,7 +16,8 @@
     "test": "jest && exec playwright test",
     "test:e2e": "exec playwright test",
     "test:unit": "jest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "typegen": "next typegen"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": "prettier --write .",
