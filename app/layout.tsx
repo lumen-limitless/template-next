@@ -1,6 +1,3 @@
-import Footer from "@/app/footer"
-import Header from "@/app/header"
-import Main from "@/app/main"
 import { cn } from "@/lib/utils"
 import { Viewport } from "next"
 import { Roboto } from "next/font/google"
@@ -41,11 +38,25 @@ export default function RootLayout(props: LayoutProps<"/">) {
           Skip Content
         </a>
 
-        <Header />
+        <header
+          id="header"
+          className="sticky top-0 z-20 flex h-16 w-full items-center border-b px-5"
+        >
+          <div className="flex w-full justify-between">
+            <object data="/vercel.svg" width={100} height={24} />
+          </div>
+        </header>
 
-        <Main>{props.children}</Main>
+        <main id="main" className="grow">
+          {props.children}
+        </main>
 
-        <Footer />
+        <footer id="footer" className="flex h-16 items-center border-t px-5">
+          <p className="text-sm">
+            &copy; {new Date().getFullYear()} Lumen Limitless. All rights
+            reserved.
+          </p>
+        </footer>
 
         <TailwindIndicator />
       </body>
