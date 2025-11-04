@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
-import { Viewport } from "next";
+import type { Viewport } from "next";
 import { Roboto } from "next/font/google";
+import { cn } from "@/lib/utils";
 import { defaultMetadata } from "../lib/metadata";
 import "./globals.css";
 
