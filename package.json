@@ -8,9 +8,8 @@
     "analyze": "ANALYZE=true next build",
     "build": "next build",
     "dev": "next dev",
-    "format": "prettier --write .",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
+    "format": "biome format --write",
+    "lint": "biome check",
     "prepare": "husky",
     "start": "next start",
     "test": "jest && exec playwright test",
@@ -20,26 +19,8 @@
     "typegen": "next typegen"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": "prettier --write .",
-    "*.{css,md}": "prettier --write ."
-  },
-  "prettier": {
-    "endOfLine": "lf",
-    "plugins": [
-      "prettier-plugin-organize-imports",
-      "prettier-plugin-packagejson",
-      "prettier-plugin-tailwindcss"
-    ],
-    "semi": false,
-    "singleQuote": false,
-    "tabWidth": 2,
-    "tailwindFunctions": [
-      "clsx",
-      "cn",
-      "cva"
-    ],
-    "trailingComma": "es5",
-    "useTabs": false
+    "*.{ts,tsx,js,jsx}": "biome format --write",
+    "*.{css,md}": "biome format --write"
   },
   "dependencies": {
     "@svgr/webpack": "8.1.0",
@@ -58,6 +39,7 @@
     "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.2.0",
     "@eslint/eslintrc": "3.3.1",
     "@next/bundle-analyzer": "16.0.1",
     "@next/env": "16.0.1",
@@ -68,17 +50,10 @@
     "@types/node": "24.5.0",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
-    "eslint": "9.35.0",
-    "eslint-config-next": "16.0.1",
-    "eslint-config-prettier": "10.1.8",
     "husky": "9.1.7",
     "jest": "30.1.3",
     "jest-environment-jsdom": "30.1.2",
     "lint-staged": "16.1.6",
-    "prettier": "3.6.2",
-    "prettier-plugin-organize-imports": "4.2.0",
-    "prettier-plugin-packagejson": "2.5.19",
-    "prettier-plugin-tailwindcss": "0.6.14",
     "ts-node": "10.9.2",
     "typescript": "5.9.2"
   },

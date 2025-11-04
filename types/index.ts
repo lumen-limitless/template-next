@@ -14,14 +14,14 @@
  */
 export type ServerActionResponse<T = undefined> =
   | {
-      success: true
-      data?: T
-      message?: string
+      success: true;
+      data?: T;
+      message?: string;
     }
   | {
-      success: false
-      error: Error
-    }
+      success: false;
+      error: Error;
+    };
 
 /**
  * Represents a server action function.
@@ -40,5 +40,5 @@ export type ServerActionResponse<T = undefined> =
  * }
  */
 export type ServerAction<Input = void, Output = undefined> = (
-  args: Input
-) => Promise<ServerActionResponse<Output>>
+  args: Input,
+) => Promise<ServerActionResponse<Output>>;

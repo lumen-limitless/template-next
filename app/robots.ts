@@ -1,5 +1,5 @@
-import { type MetadataRoute } from "next"
-import { baseUrl } from "../lib/metadata"
+import { type MetadataRoute } from "next";
+import { baseUrl } from "../lib/metadata";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -10,5 +10,5 @@ export default function robots(): MetadataRoute.Robots {
     ],
     sitemap: `${baseUrl.origin}/sitemap.xml`,
     host: baseUrl.host,
-  }
+  };
 }

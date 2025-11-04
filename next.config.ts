@@ -1,9 +1,10 @@
-import withBundleAnalyzer from "@next/bundle-analyzer"
-import { NextConfig } from "next"
+import withBundleAnalyzer from "@next/bundle-analyzer";
+import type { NextConfig } from "next";
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  reactCompiler: true,
   trailingSlash: false,
   output: undefined,
   transpilePackages: undefined,
@@ -18,9 +19,9 @@ const nextConfig: NextConfig = {
     formats: ["image/webp", "image/avif"],
     deviceSizes: undefined,
   },
-}
+};
 
 // bundle-analyzer
 export default withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" })(
-  nextConfig
-)
+  nextConfig,
+);

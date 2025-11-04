@@ -1,5 +1,5 @@
-import { APP_DESCRIPTION } from "@/lib/metadata"
-import type { MetadataRoute } from "next"
+import { APP_DESCRIPTION } from "@/lib/metadata";
+import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -12,5 +12,5 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#000000",
     icons: [],
     screenshots: [],
-  }
+  };
 }

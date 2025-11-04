@@ -1,19 +1,19 @@
-import { cn } from "@/lib/utils"
-import { Viewport } from "next"
-import { Roboto } from "next/font/google"
-import { defaultMetadata } from "../lib/metadata"
-import "./globals.css"
+import { cn } from "@/lib/utils";
+import { Viewport } from "next";
+import { Roboto } from "next/font/google";
+import { defaultMetadata } from "../lib/metadata";
+import "./globals.css";
 
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
-})
+});
 
-export const metadata = defaultMetadata
+export const metadata = defaultMetadata;
 
 export const viewport: Viewport = {
   themeColor: "#FFFFFF",
-}
+};
 
 export default function RootLayout(props: LayoutProps<"/">) {
   return (
@@ -26,7 +26,7 @@ export default function RootLayout(props: LayoutProps<"/">) {
       <body
         className={cn(
           "flex min-h-screen touch-manipulation flex-col",
-          roboto.className
+          roboto.className,
         )}
       >
         <a
@@ -43,7 +43,7 @@ export default function RootLayout(props: LayoutProps<"/">) {
           className="sticky top-0 z-20 flex h-16 w-full items-center border-b px-5"
         >
           <div className="flex w-full justify-between">
-            <object data="/vercel.svg" width={100} height={24} />
+            <object title="vercel" data="/vercel.svg" width={100} height={24} />
           </div>
         </header>
 
@@ -61,11 +61,11 @@ export default function RootLayout(props: LayoutProps<"/">) {
         <TailwindIndicator />
       </body>
     </html>
-  )
+  );
 }
 
 const TailwindIndicator = () => {
-  if (process.env.NODE_ENV === "production") return null
+  if (process.env.NODE_ENV === "production") return null;
 
   return (
     <div className="fixed bottom-0 left-0 z-50 bg-black p-2 font-mono text-sm text-white">
@@ -77,5 +77,5 @@ const TailwindIndicator = () => {
       <span className="3xl:hidden hidden 2xl:block">2XL</span>
       <span className="3xl:block hidden">3XL</span>
     </div>
-  )
-}
+  );
+};
