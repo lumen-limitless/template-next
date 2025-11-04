@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-export default function Error({
+export default function ErrorPage({
   error,
   reset,
 }: {
@@ -19,6 +19,7 @@ export default function Error({
       <h1 className="text-6xl">😔</h1>
       <h2 className="text-xl">Something went wrong!</h2>
       <button
+        type="reset"
         className="rounded-full bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
         onClick={
           // Attempt to recover by trying to re-render the segment
