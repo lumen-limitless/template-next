@@ -18,10 +18,6 @@
     "typecheck": "tsc --noEmit",
     "typegen": "next typegen"
   },
-  "lint-staged": {
-    "*.{ts,tsx,js,jsx}": "biome format --write",
-    "*.{css,md}": "biome format --write"
-  },
   "dependencies": {
     "@svgr/webpack": "8.1.0",
     "@tailwindcss/postcss": "4.1.13",
