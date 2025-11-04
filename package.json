@@ -20,7 +20,9 @@
     "typegen": "next typegen"
   },
   "lint-staged": {
-    "*": "pnpm format"
+    "*": [
+      "biome check --fix --no-errors-on-unmatched --files-ignore-unknown=true"
+    ]
   },
   "dependencies": {
     "@svgr/webpack": "8.1.0",
