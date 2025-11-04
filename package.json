@@ -19,6 +19,9 @@
     "typecheck": "tsc --noEmit",
     "typegen": "next typegen"
   },
+  "lint-staged": {
+    "*": "pnpm format"
+  },
   "dependencies": {
     "@svgr/webpack": "8.1.0",
     "@tailwindcss/postcss": "4.1.13",

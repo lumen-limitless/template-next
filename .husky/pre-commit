@@ -1,1 +1,1 @@
-pnpm format
+npx lint-staged
