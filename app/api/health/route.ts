@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
-  console.debug(req);
+  await req.json();
   return NextResponse.json({ status: "ok" }, { status: 200 });
 }

@@ -1,15 +1,11 @@
 {
-  "cSpell.words": [
-    "headlessui",
-    "postbuild",
-    "tailwindcss"
-  ],
+  "cSpell.words": ["headlessui", "postbuild", "tailwindcss"],
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
     "source.organizeImports.biome": "explicit",
     "source.fixAll.biome": "explicit"
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "biomejs.biome",
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },

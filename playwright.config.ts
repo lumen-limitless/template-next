@@ -1,5 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const WEBSERVER_TIMEOUT_SECONDS = 360;
+const MILLISECONDS_PER_SECOND = 1000;
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -72,7 +75,7 @@ export default defineConfig({
   webServer: {
     command: "pnpm build && pnpm start",
     url: "http://127.0.0.1:3000",
-    timeout: 360 * 1000,
+    timeout: WEBSERVER_TIMEOUT_SECONDS * MILLISECONDS_PER_SECOND,
     reuseExistingServer: !process.env.CI,
   },
 });

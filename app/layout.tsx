@@ -64,7 +64,9 @@ export default function RootLayout(props: LayoutProps<"/">) {
 }
 
 const TailwindIndicator = () => {
-  if (process.env.NODE_ENV === "production") return null;
+  if (process.env.NODE_ENV === "production") {
+    return null;
+  }
 
   return (
     <div className="fixed bottom-0 left-0 z-50 bg-black p-2 font-mono text-sm text-white">

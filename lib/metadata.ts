@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { env } from "./env";
 
 export const APP_DESCRIPTION =
   "A Next.js starter with TypeScript, TailwindCSS, ultracite (biome), Jest, and more.";
 
-export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || "Next.js Starter";
+export const APP_NAME = env.NEXT_PUBLIC_APP_NAME || "Next.js Starter";
 
 const getBaseUrl = (): string => {
-  if (process.env.NEXT_PUBLIC_APP_URL) {
-    const url = process.env.NEXT_PUBLIC_APP_URL;
+  if (env.NEXT_PUBLIC_APP_URL) {
+    const url = env.NEXT_PUBLIC_APP_URL;
     return url.startsWith("http") ? url : `https://${url}`;
   }
 
