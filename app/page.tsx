@@ -4,11 +4,11 @@ export const metadata = {
 export default function Page(props: PageProps<"/">) {
   return (
     <object
-      title="next"
+      className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 animate-pulse"
       data="/next.svg"
-      width={200}
       height={48}
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse"
+      title="next"
+      width={200}
     />
   );
 }

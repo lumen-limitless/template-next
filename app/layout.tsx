@@ -17,41 +17,41 @@ export const viewport: Viewport = {
 
 export default function RootLayout(props: LayoutProps<"/">) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html className="scroll-smooth" lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
       </head>
 
       <body
         className={cn(
           "flex min-h-screen touch-manipulation flex-col",
-          roboto.className,
+          roboto.className
         )}
       >
         <a
-          href="#main"
-          className="sr-only absolute top-[-999px] left-[-999px] block border bg-[#ffc] text-black focus:not-sr-only focus:top-0 focus:bottom-0 focus:border-[#990000]"
           aria-label="skip"
+          className="sr-only absolute top-[-999px] left-[-999px] block border bg-[#ffc] text-black focus:not-sr-only focus:top-0 focus:bottom-0 focus:border-[#990000]"
+          href="#main"
           id="skip"
         >
           Skip Content
         </a>
 
         <header
-          id="header"
           className="sticky top-0 z-20 flex h-16 w-full items-center border-b px-5"
+          id="header"
         >
           <div className="flex w-full justify-between">
-            <object title="vercel" data="/vercel.svg" width={100} height={24} />
+            <object data="/vercel.svg" height={24} title="vercel" width={100} />
           </div>
         </header>
 
-        <main id="main" className="grow">
+        <main className="grow" id="main">
           {props.children}
         </main>
 
-        <footer id="footer" className="flex h-16 items-center border-t px-5">
+        <footer className="flex h-16 items-center border-t px-5" id="footer">
           <p className="text-sm">
             &copy; Lumen Limitless. All rights reserved.
           </p>

@@ -1,21 +1,25 @@
 import type { Metadata } from "next";
 
 export const APP_DESCRIPTION =
-  "A Next.js starter with TypeScript, TailwindCSS, ESLint, Prettier, Jest, and more.";
+  "A Next.js starter with TypeScript, TailwindCSS, ultracite (biome), Jest, and more.";
 
 export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || "Next.js Starter";
 
-export const baseUrl = new URL(
-  process.env.NEXT_PUBLIC_APP_URL
-    ? process.env.NEXT_PUBLIC_APP_URL.startsWith("http")
-      ? process.env.NEXT_PUBLIC_APP_URL
-      : `https://${process.env.NEXT_PUBLIC_APP_URL}`
-    : process.env.NEXT_PUBLIC_VERCEL_URL
-      ? process.env.NEXT_PUBLIC_VERCEL_URL.startsWith("http")
-        ? process.env.NEXT_PUBLIC_VERCEL_URL
-        : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-      : "http://localhost:3000",
-);
+const getBaseUrl = (): string => {
+  if (process.env.NEXT_PUBLIC_APP_URL) {
+    const url = process.env.NEXT_PUBLIC_APP_URL;
+    return url.startsWith("http") ? url : `https://${url}`;
+  }
+
+  if (process.env.NEXT_PUBLIC_VERCEL_URL) {
+    const url = process.env.NEXT_PUBLIC_VERCEL_URL;
+    return url.startsWith("http") ? url : `https://${url}`;
+  }
+
+  return "http://localhost:3000";
+};
+
+export const baseUrl = new URL(getBaseUrl());
 
 export const defaultMetadata: Metadata = {
   title: {

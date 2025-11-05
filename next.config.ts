@@ -23,5 +23,5 @@ const nextConfig: NextConfig = {
 
 // bundle-analyzer
 export default withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" })(
-  nextConfig,
+  nextConfig
 );

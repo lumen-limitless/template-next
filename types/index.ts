@@ -40,5 +40,5 @@ export type ServerActionResponse<T = undefined> =
  * }
  */
 export type ServerAction<Input = void, Output = undefined> = (
-  args: Input,
+  args: Input
 ) => Promise<ServerActionResponse<Output>>;

@@ -1,7 +1,7 @@
 "use client";
 
 export default function GlobalError({
-  error,
+  // error,
   reset,
 }: {
   error: Error;
@@ -14,12 +14,12 @@ export default function GlobalError({
           <h1 className="text-6xl">😔</h1>
           <h2 className="text-xl">Something went wrong!</h2>
           <button
-            type="reset"
             className="rounded-full bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
             onClick={
               // Attempt to recover by trying to re-render the segment
               () => reset()
             }
+            type="reset"
           >
             Try again
           </button>
