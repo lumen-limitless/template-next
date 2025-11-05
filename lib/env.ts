@@ -7,8 +7,8 @@ const server = z.object({});
 
 // Client-exposed variables (must have NEXT_PUBLIC_ prefix)
 const client = z.object({
-  NEXT_PUBLIC_APP_NAME: z.string().min(1),
-  NEXT_PUBLIC_APP_URL: z.url(),
+  NEXT_PUBLIC_APP_NAME: z.string().default("NextJS Starter"),
+  NEXT_PUBLIC_APP_URL: z.string().default("https://localhost:3000"),
 });
 
 function validateClientPrefix(schema: z.ZodObject<any>) {
