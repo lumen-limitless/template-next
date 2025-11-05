@@ -19,7 +19,6 @@
     "typecheck": "tsc --noEmit",
     "typegen": "next typegen"
   },
-
   "lint-staged": {
     "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
       "biome format --write --no-errors-on-unmatched"
