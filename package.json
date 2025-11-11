@@ -9,8 +9,7 @@
     "build": "next build",
     "dev": "next dev",
     "format": "biome format --write",
-    "lint": "biome check",
-    "lint:fix": "biome check --fix",
+    "lint": "ultracite fix",
     "prepare": "husky",
     "start": "next start",
     "test": "jest && exec playwright test",
@@ -21,7 +20,7 @@
   },
   "lint-staged": {
     "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
-      "biome format --write --no-errors-on-unmatched"
+      "pnpm dlx ultracite fix"
     ]
   },
   "dependencies": {
