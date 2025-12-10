@@ -10,13 +10,17 @@ This is a Next.js template repository that includes various scripts and dependen
 
 ## Features
 
-- **Next.js**: A popular React framework for building web applications.
+- **Next.js 16**: The latest React framework with App Router, Server Components, and React Compiler support.
 
-- **React**: A JavaScript library for building user interfaces.
+- **React 19**: The newest version of React with improved performance and features.
 
-- **Tailwind CSS**: A utility-first CSS framework for building custom designs quickly.
+- **Tailwind CSS 4**: Next-generation utility-first CSS framework with improved performance.
 
-- **TypeScript**: A statically-typed superset of JavaScript for enhanced code quality.
+- **TypeScript**: Strict TypeScript configuration for enhanced type safety.
+
+- **Biome + Ultracite**: Lightning-fast Rust-based linting and formatting via Ultracite's zero-config Biome preset.
+
+- **Husky + lint-staged**: Git hooks that automatically lint and format staged files on commit.
 
 - **Jest & Playwright**: Testing libraries for unit and end-to-end testing.
 
@@ -67,7 +71,23 @@ In the project directory, you can run the following scripts:
   pnpm lint
   ```
 
-  Runs linting checks.
+  Runs Biome linting checks via Ultracite.
+
+- **Lint & Fix**:
+
+  ```bash
+  pnpm lint:fix
+  ```
+
+  Automatically fixes linting and formatting issues.
+
+- **Format**:
+
+  ```bash
+  pnpm format
+  ```
+
+  Formats code with Biome.
 
 - **Unit Tests**:
 
@@ -92,6 +112,17 @@ In the project directory, you can run the following scripts:
   ```
 
   Analyzes your bundle size.
+
+## Code Quality
+
+This project uses **Ultracite**, a zero-config Biome preset for fast, consistent code quality:
+
+- **Biome**: Rust-based linter and formatter (extremely fast)
+- **Ultracite**: Pre-configured Biome rules for Next.js/React projects
+- **Husky**: Git hooks manager
+- **lint-staged**: Runs linters on staged files only
+
+On every commit, Husky triggers lint-staged which automatically formats and lints your staged files using Ultracite.
 
 ## License
 
