@@ -24,6 +24,10 @@ This is a Next.js template repository that includes various scripts and dependen
 
 - **Jest & Playwright**: Testing libraries for unit and end-to-end testing.
 
+- **shadcn/ui**: Beautiful, accessible component library with New York style, CSS variables, and Lucide icons.
+
+- **MCP Servers**: Pre-configured Model Context Protocol servers for AI-assisted development.
+
 ## Getting Started
 
 ### Prerequisites
@@ -123,6 +127,35 @@ This project uses **Ultracite**, a zero-config Biome preset for fast, consistent
 - **lint-staged**: Runs linters on staged files only
 
 On every commit, Husky triggers lint-staged which automatically formats and lints your staged files using Ultracite.
+
+## shadcn/ui
+
+This template comes pre-configured with [shadcn/ui](https://ui.shadcn.com/), a collection of beautifully designed, accessible components.
+
+**Configuration:**
+
+- Style: New York
+- Base color: Neutral
+- CSS Variables: Enabled
+- Icon library: Lucide
+
+**Adding components:**
+
+```bash
+pnpm dlx shadcn@latest add button
+```
+
+Components are installed to `components/ui/` and can be customized to fit your needs.
+
+## MCP Servers
+
+This template includes pre-configured [Model Context Protocol](https://modelcontextprotocol.io/) servers in `.mcp.json` for AI-assisted development:
+
+- **next-devtools**: Next.js development tools integration
+- **chrome-devtools**: Chrome DevTools integration for debugging
+- **shadcn**: Direct integration with shadcn/ui for component management
+
+These servers enable AI coding assistants to interact with your development environment more effectively.
 
 ## License
 

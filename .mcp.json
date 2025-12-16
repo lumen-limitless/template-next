@@ -5,6 +5,11 @@
       "command": "npx",
       "args": ["next-devtools-mcp@latest"],
       "env": {}
+    },
+
+    "shadcn": {
+      "command": "npx",
+      "args": ["shadcn@latest", "mcp"]
     }
   }
 }
