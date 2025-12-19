@@ -1,4 +1,3 @@
-import withBundleAnalyzer from "@next/bundle-analyzer";
 import type { NextConfig } from "next";
 
 const IMAGE_QUALITY_STANDARD = 75;
@@ -24,7 +23,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-// bundle-analyzer
-export default withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" })(
-  nextConfig
-);
+export default nextConfig;
