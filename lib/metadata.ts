@@ -23,51 +23,50 @@ const getBaseUrl = (): string => {
 export const baseUrl = new URL(getBaseUrl());
 
 export const defaultMetadata: Metadata = {
+  appleWebApp: {
+    capable: false,
+    statusBarStyle: "default",
+    title: APP_NAME,
+  },
+  applicationName: APP_NAME,
+  description: APP_DESCRIPTION,
+
+  formatDetection: {
+    address: false,
+    email: false,
+    telephone: false,
+  },
+  generator: "Next.js",
+  keywords: ["nextjs", "template"],
+  metadataBase: baseUrl,
+
+  openGraph: {
+    description: APP_DESCRIPTION,
+    locale: "en_US",
+    siteName: APP_NAME,
+    title: APP_NAME,
+    type: "website",
+    url: baseUrl,
+  },
+
+  robots: {
+    follow: true,
+    googleBot: {
+      follow: true,
+      index: true,
+    },
+    index: true,
+  },
   title: {
     absolute: APP_NAME,
     default: APP_NAME,
     template: `%s | ${APP_NAME}`,
   },
-  applicationName: APP_NAME,
-  description: APP_DESCRIPTION,
-  metadataBase: baseUrl,
-  generator: "Next.js",
-  keywords: ["nextjs", "template"],
-
-  openGraph: {
-    type: "website",
-    url: baseUrl,
-    siteName: APP_NAME,
-    title: APP_NAME,
-    description: APP_DESCRIPTION,
-    locale: "en_US",
-  },
 
   twitter: {
-    title: APP_NAME,
+    card: "summary_large_image",
     creator: "@LumenLimitless",
     description: APP_DESCRIPTION,
-    card: "summary_large_image",
-  },
-
-  appleWebApp: {
-    statusBarStyle: "default",
     title: APP_NAME,
-    capable: false,
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
-  },
-
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
   },
 };

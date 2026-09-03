@@ -17,10 +17,7 @@ export default function ErrorPage({
       <h2 className="text-xl">Something went wrong!</h2>
       <button
         className="rounded-full bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
+        onClick={reset}
         type="reset"
       >
         Try again

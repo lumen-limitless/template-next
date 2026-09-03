@@ -5,21 +5,21 @@ const IMAGE_QUALITY_HIGH = 100;
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
-  reactStrictMode: true,
-  reactCompiler: true,
-  trailingSlash: false,
+  cacheComponents: true,
+  images: {
+    deviceSizes: undefined,
+    formats: ["image/webp", "image/avif"],
+    qualities: [IMAGE_QUALITY_STANDARD, IMAGE_QUALITY_HIGH],
+  },
   output: undefined,
+  reactCompiler: true,
+  reactStrictMode: true,
+  trailingSlash: false,
   transpilePackages: undefined,
   typedRoutes: true,
-  cacheComponents: true,
 
   typescript: {
     ignoreBuildErrors: true,
-  },
-  images: {
-    qualities: [IMAGE_QUALITY_STANDARD, IMAGE_QUALITY_HIGH],
-    formats: ["image/webp", "image/avif"],
-    deviceSizes: undefined,
   },
 };
 
