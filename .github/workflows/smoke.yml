@@ -1,0 +1,85 @@
+# Scaffolds an app with the latest create-next-app, ultracite and shadcn, then
+# lints, typechecks, builds and tests it. A red run means one of those CLIs changed
+# a flag or default and the script or overlay needs updating.
+name: Smoke test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+jobs:
+  scaffold:
+    name: ${{ matrix.ui }}${{ matrix.testing && ' + testing' || '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - ui: shadcn
+            testing: true
+          - ui: tailwind
+            testing: false
+    env:
+      APP_DIR: ${{ github.workspace }}/../smoke-app
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+        with:
+          version: latest
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+
+      - name: Configure git identity
+        run: |
+          git config --global user.name "next-starter smoke test"
+          git config --global user.email "smoke-test@users.noreply.github.com"
+
+      - name: Scaffold (includes lint, format and typecheck)
+        run: |
+          args=(--ui "${{ matrix.ui }}")
+          if [[ "${{ matrix.testing }}" == "true" ]]; then args+=(--testing); fi
+          bash plugins/next-starter/skills/new-next-app/scripts/create.sh "$APP_DIR" "${args[@]}"
+
+      - name: Working tree is clean
+        working-directory: ${{ env.APP_DIR }}
+        run: test -z "$(git status --porcelain)" || { git status; exit 1; }
+
+      - name: Build
+        working-directory: ${{ env.APP_DIR }}
+        run: pnpm build
+
+      - name: Unit tests
+        if: matrix.testing
+        working-directory: ${{ env.APP_DIR }}
+        run: pnpm test:unit
+
+      - name: E2E tests
+        if: matrix.testing
+        working-directory: ${{ env.APP_DIR }}
+        run: |
+          pnpm exec playwright install --with-deps chromium
+          pnpm exec playwright test --project=chromium
+
+  plugin:
+    name: plugin manifest
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+
+      - name: Validate marketplace and plugin
+        run: |
+          npx -y @anthropic-ai/claude-code plugin validate . --strict
+          npx -y @anthropic-ai/claude-code plugin validate ./plugins/next-starter --strict
