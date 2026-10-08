@@ -1,0 +1,8 @@
+# Copy to .env.local and fill in as needed. Every variable must also be added to lib/env.ts.
+
+# Site name shown in metadata (defaults to the name in lib/metadata.ts)
+NEXT_PUBLIC_APP_NAME=
+
+# Canonical site URL, with or without protocol, e.g. example.com
+# (defaults to the Vercel production URL, then http://localhost:3000)
+NEXT_PUBLIC_APP_URL=

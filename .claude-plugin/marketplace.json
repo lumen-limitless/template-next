@@ -1,0 +1,16 @@
+{
+  "name": "lumen-limitless",
+  "owner": {
+    "name": "lumen-limitless"
+  },
+  "description": "Claude Code plugins by Lumen Limitless.",
+  "plugins": [
+    {
+      "name": "next-starter",
+      "source": "./plugins/next-starter",
+      "description": "Scaffold new Next.js apps from the latest create-next-app, Ultracite (Biome) and shadcn/ui or plain Tailwind, with Lumen Limitless conventions.",
+      "category": "development",
+      "tags": ["nextjs", "scaffold", "ultracite", "shadcn"]
+    }
+  ]
+}

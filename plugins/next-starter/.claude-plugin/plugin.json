@@ -1,0 +1,12 @@
+{
+  "name": "next-starter",
+  "version": "1.0.0",
+  "description": "Scaffold new Next.js apps from the latest create-next-app, Ultracite (Biome) and shadcn/ui or plain Tailwind, with Lumen Limitless conventions.",
+  "author": {
+    "name": "lumen-limitless"
+  },
+  "homepage": "https://github.com/lumen-limitless/template-next",
+  "repository": "https://github.com/lumen-limitless/template-next",
+  "license": "MIT",
+  "keywords": ["nextjs", "scaffold", "ultracite", "biome", "shadcn", "tailwind"]
+}

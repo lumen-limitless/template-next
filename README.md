@@ -1,166 +1,75 @@
-# Template-Next
+# next-starter
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/lumen-limitless/template-next)
-![GitHub last commit](https://img.shields.io/github/last-commit/lumen-limitless/template-next)
+[![Smoke test](https://github.com/lumen-limitless/template-next/actions/workflows/smoke.yml/badge.svg)](https://github.com/lumen-limitless/template-next/actions/workflows/smoke.yml)
 
-## Description
+Scaffold a new Next.js app from the **latest** create-next-app, Ultracite (Biome) and shadcn/ui or plain Tailwind, plus my own conventions. It runs as a Claude Code plugin or as a plain `npx` command.
 
-This is a Next.js template repository that includes various scripts and dependencies for building a modern web application. It's designed to kickstart your project development with Next.js, React, and Tailwind CSS.
+This repo used to be a Next.js template to clone. Keeping its dependencies and config current was constant work, so it now generates each project from the official CLIs at `@latest` and only stores the files those CLIs can't produce.
 
-## Features
+## Use it from Claude Code
 
-- **Next.js 16**: The latest React framework with App Router, Server Components, and React Compiler support.
-
-- **React 19**: The newest version of React with improved performance and features.
-
-- **Tailwind CSS 4**: Next-generation utility-first CSS framework with improved performance.
-
-- **TypeScript**: Strict TypeScript configuration for enhanced type safety.
-
-- **Biome + Ultracite**: Lightning-fast Rust-based linting and formatting via Ultracite's zero-config Biome preset.
-
-- **Husky + lint-staged**: Git hooks that automatically lint and format staged files on commit.
-
-- **Jest & Playwright**: Testing libraries for unit and end-to-end testing.
-
-- **shadcn/ui**: Beautiful, accessible component library with New York style, CSS variables, and Lucide icons.
-
-- **MCP Servers**: Pre-configured Model Context Protocol servers for AI-assisted development.
-
-## Getting Started
-
-### Prerequisites
-
-Before you begin, ensure you have Node.js and pnpm installed.
-
-### Installation
-
-1. Clone the repository to your local machine:
-
-   ```bash
-   git clone https://github.com/lumen-limitless/template-next.git
-   cd template-next
-   ```
-
-2. Install project dependencies:
-
-   ```bash
-   pnpm install
-   ```
-
-### Available Scripts
-
-In the project directory, you can run the following scripts:
-
-- **Development Server**:
-
-  ```bash
-  pnpm dev
-  ```
-
-  Starts the development server.
-
-- **Build**:
-
-  ```bash
-  pnpm build
-  ```
-
-  Builds the production-ready application.
-
-- **Linting**:
-
-  ```bash
-  pnpm lint
-  ```
-
-  Runs Biome linting checks via Ultracite.
-
-- **Lint & Fix**:
-
-  ```bash
-  pnpm lint:fix
-  ```
-
-  Automatically fixes linting and formatting issues.
-
-- **Format**:
-
-  ```bash
-  pnpm format
-  ```
-
-  Formats code with Biome.
-
-- **Unit Tests**:
-
-  ```bash
-  pnpm test:unit
-  ```
-
-  Runs unit tests.
-
-- **End-to-End Tests**:
-
-  ```bash
-  pnpm test:e2e
-  ```
-
-  Runs end-to-end tests using Playwright.
-
-- **Bundle Analyzer**:
-
-  ```bash
-  pnpm analyze
-  ```
-
-  Analyzes your bundle size.
-
-## Code Quality
-
-This project uses **Ultracite**, a zero-config Biome preset for fast, consistent code quality:
-
-- **Biome**: Rust-based linter and formatter (extremely fast)
-- **Ultracite**: Pre-configured Biome rules for Next.js/React projects
-- **Husky**: Git hooks manager
-- **lint-staged**: Runs linters on staged files only
-
-On every commit, Husky triggers lint-staged which automatically formats and lints your staged files using Ultracite.
-
-## shadcn/ui
-
-This template comes pre-configured with [shadcn/ui](https://ui.shadcn.com/), a collection of beautifully designed, accessible components.
-
-**Configuration:**
-
-- Style: New York
-- Base color: Neutral
-- CSS Variables: Enabled
-- Icon library: Lucide
-
-**Adding components:**
-
-```bash
-pnpm dlx shadcn@latest add button
+```text
+/plugin marketplace add lumen-limitless/template-next
+/plugin install next-starter@lumen-limitless
 ```
 
-Components are installed to `components/ui/` and can be customized to fit your needs.
+Then ask for it ("create a new Next.js app called acme-site with tests"), or call the skill directly:
 
-## MCP Servers
+```text
+/next-starter:new-next-app acme-site --ui shadcn --testing
+```
 
-This template includes pre-configured [Model Context Protocol](https://modelcontextprotocol.io/) servers in `.mcp.json` for AI-assisted development:
+The skill runs the script, personalises the metadata and anything else you asked for, and checks lint and types.
 
-- **next-devtools**: Next.js development tools integration
-- **chrome-devtools**: Chrome DevTools integration for debugging
-- **shadcn**: Direct integration with shadcn/ui for component management
+## Use it without Claude
 
-These servers enable AI coding assistants to interact with your development environment more effectively.
+```bash
+npx github:lumen-limitless/template-next my-app --ui tailwind --testing
+```
 
-## License
+Requires Node.js 20.9+, pnpm and git.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+| Option | Default | |
+| --- | --- | --- |
+| `--ui shadcn\|tailwind` | `shadcn` | shadcn/ui, or plain Tailwind with a `cn` helper |
+| `--preset <name>` | shadcn's default | shadcn preset (shadcn only) |
+| `--testing` | off | Vitest, Testing Library and Playwright |
+| `--name <name>` | from the directory | App name used in metadata |
+| `--description <text>` | generic | Site description used in metadata |
+| `--no-commit` | off | Leave the next-starter changes uncommitted |
 
-## Acknowledgments
+## What you get
 
-- Inspired by modern web development practices.
+| Source | Provides |
+| --- | --- |
+| `create-next-app@latest` | Next.js, React, TypeScript, Tailwind CSS 4, React Compiler, Cache Components, `AGENTS.md` pointing agents at the installed Next.js docs |
+| `ultracite init` | Biome config, husky + lint-staged pre-commit, Claude Code and Cursor post-edit fix hooks, VS Code / Zed / Cursor settings, Ultracite skill and code standards |
+| `shadcn init` (`--ui shadcn`) | `components.json`, theme, `cn`, shadcn skill and MCP server |
+| `overlay/common` | SEO metadata (`lib/metadata.ts`), zod-validated env (`lib/env.ts`), sitemap, robots, manifest, OG image, error / 404 / loading pages, `/api/health`, root layout, `ServerAction` types, `CLAUDE.md` conventions, next-devtools MCP server, typed routes and image config, CI (lint + typecheck), Dependabot |
+| `overlay/testing` (`--testing`) | Vitest + Testing Library, Playwright, example tests, test workflow |
+
+## How it works
+
+[`create.sh`](plugins/next-starter/skills/new-next-app/scripts/create.sh):
+
+1. `create-next-app@latest` with TypeScript, Tailwind, Biome, App Router, React Compiler and Cache Components.
+2. `ultracite init` (config only), then `pnpm install`.
+3. `shadcn init` for `--ui shadcn`.
+4. Copies `overlay/common`, plus `overlay/tailwind` or `overlay/testing` as selected. Dotfiles are stored as `_name` (for example `_github/`) so plugin installs and npm packing keep them, and are renamed on copy.
+5. [`patch-project.mjs`](plugins/next-starter/skills/new-next-app/scripts/patch-project.mjs) merges what can't be copied: `package.json` scripts, Biome excludes, `.gitignore`, `.mcp.json`, `next.config.ts`, `CLAUDE.md` sections and the app name.
+6. `biome migrate`, `ultracite fix` and `check`, `next typegen`, `tsc`.
+7. Commits the result as "Apply next-starter setup".
+
+## Maintenance
+
+There are no dependencies to bump here. The [smoke test](.github/workflows/smoke.yml) runs weekly and on pull requests. It scaffolds a shadcn + testing app and a plain Tailwind app, then lints, typechecks, builds and runs the unit and e2e tests, and validates the plugin manifests. If it goes red, one of the CLIs changed a flag or a default, and the script or overlay needs a fix.
+
+After changing the plugin, bump `version` in `plugins/next-starter/.claude-plugin/plugin.json` (and `package.json`). Installed copies only update when the version changes.
+
+## Developing
+
+```bash
+bash plugins/next-starter/skills/new-next-app/scripts/create.sh /tmp/try --ui tailwind --testing
+claude plugin validate . --strict && claude plugin validate ./plugins/next-starter --strict
+claude --plugin-dir ./plugins/next-starter   # try the skill without installing it
+```

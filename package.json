@@ -1,73 +1,19 @@
 {
-  "name": "template-next",
-  "version": "0.0.0",
+  "name": "next-starter",
+  "version": "1.0.0",
   "private": true,
+  "description": "Scaffold new Next.js apps from the latest create-next-app, Ultracite (Biome) and shadcn/ui or plain Tailwind, with Lumen Limitless conventions.",
   "license": "MIT",
   "author": "lumen-limitless",
-  "scripts": {
-    "analyze": "next experimental-analyze",
-    "build": "next build",
-    "check": "ultracite check",
-    "dev": "next dev",
-    "fix": "ultracite fix",
-    "format": "biome format --write",
-    "lint": "ultracite check",
-    "lint:fix": "ultracite fix",
-    "prepare": "husky",
-    "start": "next start",
-    "test": "jest && exec playwright test",
-    "test:e2e": "exec playwright test",
-    "test:unit": "jest",
-    "typecheck": "tsc --noEmit",
-    "typegen": "next typegen"
+  "repository": "github:lumen-limitless/template-next",
+  "bin": {
+    "next-starter": "plugins/next-starter/skills/new-next-app/scripts/create.sh"
   },
-  "dependencies": {
-    "@svgr/webpack": "8.1.0",
-    "@tailwindcss/postcss": "4.3.3",
-    "class-variance-authority": "0.7.1",
-    "clsx": "2.1.1",
-    "lucide-react": "^1.40.0",
-    "next": "16.3.4",
-    "nuqs": "2.10.1",
-    "postcss": "8.5.28",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "react-use": "17.6.1",
-    "sharp": "0.35.4",
-    "tailwind-merge": "3.6.0",
-    "tailwindcss": "4.3.3",
-    "tailwindcss-animate": "1.0.7",
-    "zod": "^4.5.4"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.5.12",
-    "@next/env": "16.3.4",
-    "@playwright/test": "1.62.1",
-    "@testing-library/jest-dom": "7.0.1",
-    "@testing-library/react": "16.3.3",
-    "@types/jest": "30.0.0",
-    "@types/node": "26.4.1",
-    "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.7",
-    "babel-plugin-react-compiler": "^1.0.0",
-    "husky": "^9.1.7",
-    "jest": "30.5.1",
-    "jest-environment-jsdom": "30.5.1",
-    "lint-staged": "^17.4.1",
-    "shadcn": "^4.20.1",
-    "ts-node": "10.9.2",
-    "tw-animate-css": "^1.4.0",
-    "typescript": "7.0.2",
-    "ultracite": "7.10.7"
-  },
-  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0",
+  "files": [
+    "plugins/next-starter/skills/new-next-app/scripts",
+    "plugins/next-starter/skills/new-next-app/overlay"
+  ],
   "engines": {
-    "node": ">=20.0.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.2.18",
-      "@types/react-dom": "19.2.7"
-    }
+    "node": ">=20.9.0"
   }
 }

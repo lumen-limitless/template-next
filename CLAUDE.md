@@ -1,35 +1,18 @@
 # CLAUDE.md
 
-Essential guidance for coding agents working in this Next.js 15 + TypeScript repository.
+This repo is a Claude Code plugin marketplace (`.claude-plugin/marketplace.json`) with one plugin, `plugins/next-starter`, which scaffolds Next.js apps. It is not itself a Next.js app and has no dependencies.
 
-## General Rules
+## Layout
 
-- ensure you are always using the correct package manager for the project before running commands. Check package.json if not sure.
-- Do NOT run build, dev, or deploy commands unless I specifically tell you to do so.
+- `plugins/next-starter/skills/new-next-app/SKILL.md` - the skill; keep it short and point at the script.
+- `.../scripts/create.sh` - runs create-next-app, `ultracite init` and `shadcn init` at `@latest`, copies the overlay, patches, verifies and commits. Also the `npx` entry point (`bin` in `package.json`).
+- `.../scripts/patch-project.mjs` - edits that merge into generated files rather than replacing them.
+- `.../overlay/{common,tailwind,testing}/` - files copied into generated apps. Name dotfiles `_name` (`_github/`, `_env.example`); `create.sh` renames them.
+- `.github/workflows/smoke.yml` - scaffolds both variants and lints, typechecks, builds and tests them.
 
-## Build/Test Commands
+## Rules
 
-- `pnpm dev` - Development server
-- `pnpm lint` - ESLint
-- `pnpm typecheck` - TypeScript checking
-- `pnpm format` - Prettier formatting
-- `pnpm test` - All tests (Jest + Playwright)
-- `pnpm test:unit` - Jest unit tests only
-- `pnpm test:unit -- -t "<test name>"` - Run specific Jest test
-- `pnpm test:e2e` - Playwright e2e tests only
-
-## Code Style
-
-- **Imports**: Use `@/` absolute imports, auto-organized by prettier-plugin-organize-imports
-- **Format**: Double quotes, no semicolons, 2-space tabs, trailing commas (ES5)
-- **Types**: Strict TypeScript, explicit return types, use global types from `/types/index.ts`
-- **Naming**: camelCase (vars/functions), PascalCase (components/types), kebab-case (files/dirs)
-- **CSS**: Tailwind CSS 4 with `clsx`/`tailwind-merge` for className composition. use `cn` utility function when necessary.
-
-## Next.js Conventions
-
-- App Router with `page.tsx` files, default export named "Page" using `PageProps<T>` type
-- Server components by default, `'use client'` only when needed for interactivity
-- Server action functions must end with "Action" suffix
-- In Next.js 15+: `params` and `searchParams` are Promises that must be awaited
-- Use `nuqs` for URL search param state management
+- Everything the skill needs must live under `plugins/next-starter/`; installed plugins are copied without the rest of the repo.
+- Overlay files are app code for the generated project. Validate changes by scaffolding: `bash plugins/next-starter/skills/new-next-app/scripts/create.sh <tmp-dir> [--ui tailwind] [--testing]`. The script runs Ultracite and `tsc`.
+- Do NOT run `next build`, dev or deploy commands unless I specifically ask; the smoke test covers builds.
+- After changing the plugin, bump `version` in `plugins/next-starter/.claude-plugin/plugin.json` and `package.json`, and run `claude plugin validate . --strict && claude plugin validate ./plugins/next-starter --strict`.
