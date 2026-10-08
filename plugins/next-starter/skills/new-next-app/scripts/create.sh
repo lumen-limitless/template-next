@@ -13,7 +13,7 @@ Usage: next-starter <directory> [options]
 Options:
   --ui <shadcn|tailwind>  UI setup (default: shadcn)
   --preset <name>         shadcn preset (default: shadcn's default preset)
-  --testing               Add Jest, Testing Library and Playwright
+  --testing               Add Vitest, Testing Library and Playwright
   --name <name>           App name (default: derived from the directory name)
   --description <text>    One-sentence site description
   --no-commit             Leave the next-starter changes uncommitted
@@ -51,25 +51,6 @@ copy_overlay() {
       cp "$entry" "$name"
     fi
   done
-}
-
-# Newer pnpm releases refuse to add a dependency whose build script hasn't been
-# approved in pnpm-workspace.yaml's allowBuilds map. Deny the given packages there
-# (only when that map exists, so older pnpm versions are left alone).
-deny_builds() {
-  node -e '
-    const fs = require("node:fs");
-    const file = "pnpm-workspace.yaml";
-    if (!fs.existsSync(file)) process.exit(0);
-    let text = fs.readFileSync(file, "utf8");
-    if (!/^allowBuilds:/m.test(text)) process.exit(0);
-    for (const name of process.argv.slice(1)) {
-      if (!text.includes(name)) {
-        text = text.replace(/^allowBuilds:\n/m, `allowBuilds:\n  "${name}": false\n`);
-      }
-    }
-    fs.writeFileSync(file, text);
-  ' "$@"
 }
 
 dir=""
@@ -140,7 +121,7 @@ node -e 'const [major, minor] = process.versions.node.split(".").map(Number); pr
 
 frameworks=(react next)
 if $testing; then
-  frameworks+=(jest)
+  frameworks+=(vitest)
 fi
 
 step "create-next-app@latest"
@@ -160,7 +141,9 @@ pnpm dlx ultracite@latest init \
 # ultracite just edited package.json; CI defaults pnpm to --frozen-lockfile.
 pnpm install --no-frozen-lockfile
 # With --skip-install ultracite records husky/lint-staged as "latest"; pin real versions.
-pnpm add -D husky@latest lint-staged@latest
+# create-next-app pins @types/node to an old major; match the Node.js running this.
+pnpm add -D husky@latest lint-staged@latest \
+  "@types/node@$(node -p 'process.versions.node.split(".")[0]')"
 
 if [[ $ui == shadcn ]]; then
   step "shadcn init"
@@ -188,9 +171,7 @@ if [[ $ui == tailwind ]]; then
 fi
 pnpm add "${deps[@]}"
 if $testing; then
-  # Jest's file watcher ships prebuilt binaries, so its build script isn't needed.
-  deny_builds @parcel/watcher
-  pnpm add -D jest jest-environment-jsdom @types/jest ts-node \
+  pnpm add -D vitest @vitejs/plugin-react jsdom \
     @testing-library/react @testing-library/dom @testing-library/jest-dom \
     @playwright/test
 fi

@@ -1,6 +1,6 @@
 ---
 name: new-next-app
-description: Scaffold a new Next.js app on the latest Next.js release with Ultracite (Biome) linting, git hooks, Claude/Cursor edit hooks, shadcn/ui or plain Tailwind, optional Jest + Playwright, and Lumen Limitless conventions (SEO metadata, typed env, error pages, health route). Use when asked to create, start, scaffold or bootstrap a new Next.js app, site or project.
+description: Scaffold a new Next.js app on the latest Next.js release with Ultracite (Biome) linting, git hooks, Claude/Cursor edit hooks, shadcn/ui or plain Tailwind, optional Vitest + Playwright, and Lumen Limitless conventions (SEO metadata, typed env, error pages, health route). Use when asked to create, start, scaffold or bootstrap a new Next.js app, site or project.
 argument-hint: <directory> [--ui shadcn|tailwind] [--testing] [--name "App Name"]
 allowed-tools: Bash(bash ${CLAUDE_SKILL_DIR}/scripts/create.sh *)
 ---
@@ -16,7 +16,7 @@ Arguments passed to this skill: $ARGUMENTS
 - **directory** (required): where to create the app, relative to the current directory. It must not exist yet, or be empty. If the user gave no directory or app name, ask for one; that is the only question worth asking up front.
 - `--ui shadcn` (default) or `--ui tailwind`: use `tailwind` when the user wants plain Tailwind or no component library.
 - `--preset <name>`: a shadcn preset, only if the user names one.
-- `--testing`: Jest, Testing Library and Playwright, when the user wants tests.
+- `--testing`: Vitest, Testing Library and Playwright, when the user wants tests.
 - `--name "<App Name>"` and `--description "<one sentence>"`: take them from the conversation. Without `--name`, the name is the title-cased directory name.
 
 ## 2. Run the script

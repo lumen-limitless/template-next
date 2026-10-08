@@ -55,9 +55,10 @@ pkg.scripts = {
   typecheck: "next typegen && tsc --noEmit",
   typegen: "next typegen",
   ...(options.testing && {
-    test: "jest && playwright test",
+    test: "vitest run && playwright test",
     "test:e2e": "playwright test",
-    "test:unit": "jest",
+    "test:unit": "vitest run",
+    "test:watch": "vitest",
   }),
 };
 pkg.engines = { ...pkg.engines, node: ">=20.9.0" };
@@ -166,7 +167,7 @@ if (options.testing) {
     [
       "## Testing",
       "",
-      "- `pnpm test:unit` - Jest + Testing Library (`**/*.test.ts(x)`)",
+      "- `pnpm test:unit` - Vitest + Testing Library, run once (`**/*.test.ts(x)`); `pnpm test:watch` for watch mode",
       "- `pnpm test:e2e` - Playwright (`tests/e2e`) against a production build; run `pnpm exec playwright install` once first",
       "- `pnpm test` - both",
     ].join("\n")

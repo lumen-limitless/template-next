@@ -33,7 +33,7 @@ Requires Node.js 20.9+, pnpm and git.
 | --- | --- | --- |
 | `--ui shadcn\|tailwind` | `shadcn` | shadcn/ui, or plain Tailwind with a `cn` helper |
 | `--preset <name>` | shadcn's default | shadcn preset (shadcn only) |
-| `--testing` | off | Jest, Testing Library and Playwright |
+| `--testing` | off | Vitest, Testing Library and Playwright |
 | `--name <name>` | from the directory | App name used in metadata |
 | `--description <text>` | generic | Site description used in metadata |
 | `--no-commit` | off | Leave the next-starter changes uncommitted |
@@ -46,7 +46,7 @@ Requires Node.js 20.9+, pnpm and git.
 | `ultracite init` | Biome config, husky + lint-staged pre-commit, Claude Code and Cursor post-edit fix hooks, VS Code / Zed / Cursor settings, Ultracite skill and code standards |
 | `shadcn init` (`--ui shadcn`) | `components.json`, theme, `cn`, shadcn skill and MCP server |
 | `overlay/common` | SEO metadata (`lib/metadata.ts`), zod-validated env (`lib/env.ts`), sitemap, robots, manifest, OG image, error / 404 / loading pages, `/api/health`, root layout, `ServerAction` types, `CLAUDE.md` conventions, next-devtools MCP server, typed routes and image config, CI (lint + typecheck), Dependabot |
-| `overlay/testing` (`--testing`) | Jest + Testing Library, Playwright, example tests, test workflow |
+| `overlay/testing` (`--testing`) | Vitest + Testing Library, Playwright, example tests, test workflow |
 
 ## How it works
 
