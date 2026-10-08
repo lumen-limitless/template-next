@@ -157,7 +157,8 @@ pnpm dlx ultracite@latest init \
   --pm pnpm --linter biome --frameworks "${frameworks[@]}" \
   --editors vscode zed cursor --agents claude --hooks claude cursor \
   --integrations husky lint-staged --install-skill --skip-install --quiet
-pnpm install
+# ultracite just edited package.json; CI defaults pnpm to --frozen-lockfile.
+pnpm install --no-frozen-lockfile
 # With --skip-install ultracite records husky/lint-staged as "latest"; pin real versions.
 pnpm add -D husky@latest lint-staged@latest
 
